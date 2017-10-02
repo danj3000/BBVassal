@@ -415,7 +415,7 @@
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Turnover" path="1948,255;2535,255;2535,407;1948,407" useHighlight="false" useParentGrid="false"/>
                 </VASSAL.build.module.map.boardPicker.board.ZonedGrid>
             </VASSAL.build.module.map.boardPicker.Board>
-            <VASSAL.build.module.map.boardPicker.Board image="Streetbowl.png" name="StreetBowl" reversible="false">
+            <VASSAL.build.module.map.boardPicker.Board image="Streetbowl.jpg" name="StreetBowl" reversible="false">
                 <VASSAL.build.module.map.boardPicker.board.ZonedGrid>
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.ZonedGridHighlighter/>
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Endzone" path="278,416;444,415;441,2686;279,2685" useHighlight="false" useParentGrid="false"/>
@@ -863,7 +863,7 @@
             <VASSAL.build.widget.PieceSlot entryName="Red Score Marker" gpid="1290" height="126" width="126">+/null/playSound;victory-score.wav;;63743,0,PlaySoundMoving;true	prototype;Markers\	piece;;;Red_Score.png;Red Score Marker/	\	null;0;0;1290</VASSAL.build.widget.PieceSlot>
         </VASSAL.build.module.map.SetupStack>
         <VASSAL.build.module.map.SetupStack location="Pitch" name="Weather Boards" owningBoard="Grass Pitch" useGridLocation="false" x="2243" y="1551">
-            <VASSAL.build.widget.PieceSlot entryName="" gpid="1299" height="0" width="0">+/null/mark;Layer	mark;Weather_Board\	immob;n;V\\	report;87\,130;$location$: $newPieceName$ *;;;\\\	emb2;Activate;2;;;2;;;2;;;;1;false;0;0;Pitch_Nice.png,Pitch_Very_Sunny.png,Pitch_Rain.png,Pitch_Snow.png,Pitch_Sweltering_Heat.png;1,2,3,4,5;true;Weather_Num;;;true;Weather_Num;1;1;true;65,130;;\\\\	piece;;;;/vbottom	Weather_Board\	\\	-1\\\	1\\\\	null;0;0;1299</VASSAL.build.widget.PieceSlot>
+            <VASSAL.build.widget.PieceSlot entryName="" gpid="1299" height="0" width="0">+/null/mark;Layer	mark;Weather_Board\	immob;n;V\\	report;87\,130;$location$: $newPieceName$ *;;;\\\	emb2;Activate;2;;;2;;;2;;;;1;false;0;0;Pitch_Nice.jpg,Pitch_Very_Sunny.jpg,Pitch_Rain.jpg,Pitch_Snow.jpg,Pitch_Sweltering_Heat.jpg;1,2,3,4,5;true;Weather_Num;;;true;Weather_Num;1;1;true;65,130;;\\\\	piece;;;;/vbottom	Weather_Board\	\\	-1\\\	1\\\\	null;0;0;1299</VASSAL.build.widget.PieceSlot>
         </VASSAL.build.module.map.SetupStack>
         <VASSAL.build.module.map.LayeredPieceCollection layerOrder="Weather_Board,Grass Pitch,Ball" property="Weather Board"/>
         <VASSAL.build.module.map.SetupStack name="Blue Fame" useGridLocation="false" x="4346" y="213">
@@ -1643,7 +1643,7 @@
                         <VASSAL.build.widget.Chart chartName="Casualty Table" fileName="Street_Bowl_Rules_Casualty.png"/>
                         <VASSAL.build.widget.Chart chartName="Kickoff Table" fileName="Street_Bowl_Rules_Kickoff.png"/>
                         <VASSAL.build.widget.Chart chartName="Potions Table" fileName="Street_Bowl_Rules_Potions.png"/>
-                        <VASSAL.build.widget.Chart chartName="Shoppe of 'Orrors" fileName="Street_Bowl_Rules_Shoppe_Horrors.png"/>
+                        <VASSAL.build.widget.Chart chartName="Shoppe of 'Orrors" fileName="Street_Bowl_Rules_Shoppe_Horrors.gif"/>
                         <VASSAL.build.widget.Chart chartName="Weather" fileName="Street_Bowl_Weather.png"/>
                     </VASSAL.build.widget.BoxWidget>
                 </VASSAL.build.widget.PanelWidget>
