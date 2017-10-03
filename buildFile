@@ -809,6 +809,407 @@
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Turnover" path="1948,255;2535,255;2535,407;1948,407" useHighlight="false" useParentGrid="false"/>
                 </VASSAL.build.module.map.boardPicker.board.ZonedGrid>
             </VASSAL.build.module.map.boardPicker.Board>
+            <VASSAL.build.module.map.boardPicker.Board image="Pitch_Sevens.jpg" name="Sevens" reversible="false">
+                <VASSAL.build.module.map.boardPicker.board.ZonedGrid>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.ZonedGridHighlighter/>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Endzone" path="733,704;895,706;894,2387;733,2387" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="255,0,51" cornersLegal="false" dotsVisible="false" dx="150.0" dy="150.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="61" y0="49"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Endzone" path="3580,707;3745,707;3747,2387;3583,2388" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="51,51,255" cornersLegal="false" dotsVisible="false" dx="150.0" dy="150.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="61" y0="47"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Pitch" path="891,705;3591,708;3590,2389;891,2384" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="255,0,204" cornersLegal="false" dotsVisible="false" dx="150.10000000000005" dy="150.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="517" y0="200">
+                            <VASSAL.build.module.map.boardPicker.board.mapgrid.SquareGridNumbering color="255,255,0" first="H" fontSize="15" hDescend="false" hDrawOff="0" hLeading="1" hOff="1" hType="A" locationFormat="$gridLocation$" rotateText="0" sep="" vDescend="false" vDrawOff="0" vLeading="0" vOff="0" vType="N" visible="false"/>
+                        </VASSAL.build.module.map.boardPicker.board.SquareGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn First Half" path="312,70;591,71;591,195;310,199" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team First Half" originx="437" originy="135"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 1 First Half" path="627,71;748,71;750,196;623,199" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team First Half Turn 1" originx="685" originy="134"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 2 First Half" path="784,72;910,72;908,195;780,198" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team First Half Turn 2" originx="844" originy="132"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 3 First Half" path="938,71;1065,72;1064,199;935,200" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team First Half Turn 3" originx="1001" originy="130"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 4 First Half" path="1096,71;1223,71;1225,197;1095,200" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team First Half Turn 4" originx="1158" originy="128"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 5 First Half" path="1254,71;1381,72;1380,196;1253,201" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team First Half Turn 5" originx="1318" originy="132"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 6 First Half" path="1409,68;1539,70;1539,197;1411,201" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team First Half Turn 6" originx="1475" originy="135"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 7 First Half" path="1568,71;1696,71;1696,200;1566,203" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team First Half Turn 7" originx="1633" originy="132"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 8 First Half" path="1728,72;1853,70;1853,198;1729,199" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team First Half Turn 8" originx="1791" originy="133"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 1 Second Half" path="624,227;750,227;753,354;621,356" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Second Half Turn 1" originx="686" originy="290"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 2 Second Half" path="783,227;909,228;910,358;781,359" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Second Half Turn 2" originx="845" originy="291"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 3 Second Half" path="939,231;1066,228;1067,354;936,354" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Second Half Turn 3" originx="1001" originy="289"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 4 Second Half" path="1097,227;1225,228;1224,356;1093,356" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Second Half Turn 4" originx="1160" originy="289"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 5 Second Half" path="1255,228;1382,228;1381,357;1254,357" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Second Half Turn 5" originx="1318" originy="293"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 6 Second Half" path="1410,229;1537,229;1537,355;1408,357" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Second Half Turn 6" originx="1475" originy="290"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 7 Second Half" path="1571,231;1697,227;1698,357;1568,356" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Second Half Turn 7" originx="1632" originy="293"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Turn 8 Second Half" path="1725,227;1853,228;1854,356;1723,358" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Second Half Turn 8" originx="1790" originy="293"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Re-Rolls (1)" path="623,2875;623,2875;748,2873;748,2873;749,2752;746,2749;623,2747;623,2747" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Re-Rolls (1)" originx="686" originy="2812"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Re-Rolls (2)" path="778,2877;902,2876;906,2875;906,2875;907,2750;903,2749;837,2750;782,2750;780,2876;781,2752" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Re-Rolls (2)" originx="845" originy="2810"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Re-Rolls (3)" path="937,2874;940,2876;1064,2875;1064,2875;1063,2751;1063,2750;939,2749;939,2749" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Re-Rolls (3)" originx="999" originy="2811"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Re-Rolls (4)" path="1094,2875;1094,2875;1222,2876;1221,2814;1220,2747;1220,2747;1095,2750;1095,2750" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Re-Rolls (4)" originx="1159" originy="2811"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Re-Rolls (5)" path="1251,2877;1251,2877;1378,2874;1378,2874;1378,2748;1378,2748;1253,2748;1253,2748" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Re-Rolls (5)" originx="1317" originy="2810"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Re-Rolls (6)" path="1410,2877;1410,2878;1537,2879;1537,2879;1535,2746;1535,2746;1411,2747;1411,2747" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Re-Rolls (6)" originx="1475" originy="2809"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Re-Rolls (7)" path="1567,2876;1567,2876;1696,2877;1696,2877;1694,2748;1694,2748;1569,2747;1569,2747" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Re-Rolls (7)" originx="1633" originy="2810"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Re-Rolls (8)" path="1728,2880;1728,2880;1857,2880;1857,2880;1853,2748;1853,2748;1725,2746;1725,2746" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Re-Rolls (8)" originx="1541" originy="493"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn Marker First Half" path="2586,72;2871,72;2868,200;2586,199" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Team First Half" originx="2726" originy="134"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 1 First Half" path="2903,73;3030,72;3029,197;2899,200" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 1 First Half" originx="2963" originy="134"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 2 First Half" path="3059,73;3186,69;3186,200;3058,202" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 2 First Half" originx="3121" originy="135"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 3 First Half" path="3217,72;3344,71;3344,203;3214,204" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 3 First Half" originx="3279" originy="133"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 4 First Half" path="3375,71;3502,72;3503,198;3371,200" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 4 First Half" originx="3433" originy="135"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 5 First Half" path="3533,74;3658,72;3660,198;3528,201" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 5 First Half" originx="3596" originy="134"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 6 First Half" path="3689,71;3817,71;3817,199;3687,200" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 6 First Half" originx="3750" originy="134"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 7 First Half" path="3848,70;3976,72;3975,201;3846,201" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 7 First Half" originx="3911" originy="135"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 8 First Half" path="4005,73;4133,72;4132,200;4004,202" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 8 First Half" originx="4068" originy="136"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 1 Second Half" path="2901,228;3027,229;3028,357;2898,359" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 1 Second Half" originx="2963" originy="297"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 2 Second Half" path="3056,230;3188,227;3186,359;3055,358" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 2 Second Half" originx="3125" originy="298"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 3 Second Half" path="3219,230;3344,227;3345,355;3215,355" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 3 Second Half" originx="3277" originy="293"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 4 Second Half" path="3374,232;3503,229;3502,355;3372,357" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 4 Second Half" originx="3437" originy="293"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 5 Second Half" path="3530,231;3662,229;3661,355;3530,360" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 5 Second Half" originx="3593" originy="294"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 6 Second Half" path="3690,229;3818,229;3815,354;3687,357" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 6 Second Half" originx="3751" originy="292"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 7 Second Half" path="3844,232;3975,229;3977,357;3842,357" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 7 Second Half" originx="3910" originy="291"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Turn 8 Second Half" path="4003,231;4132,229;4134,358;4001,358" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Turn 8 Second Half" originx="4066" originy="297"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Re-Rolls (1)" path="2901,2874;2901,2874;3027,2875;3027,2875;3026,2745;3026,2745;2900,2745;2900,2745" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Re-Rolls (1)" originx="2963" originy="2807"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Re-Rolls (2)" path="3059,2872;3059,2872;3184,2873;3184,2873;3182,2745;3182,2745;3057,2745;3057,2745" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Re-Rolls (2)" originx="3120" originy="2806"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Re-Rolls (3)" path="3213,2873;3213,2874;3342,2876;3342,2876;3341,2743;3341,2743;3214,2744;3214,2744" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Re-Rolls (3)" originx="3278" originy="2806"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Re-Rolls (4)" path="3372,2874;3372,2874;3500,2873;3501,2873;3498,2744;3498,2744;3368,2744;3368,2744" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Re-Rolls (4)" originx="3438" originy="2803"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Re-Rolls (5)" path="3528,2875;3528,2875;3657,2873;3657,2873;3656,2742;3656,2742;3530,2741;3530,2741" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Re-Rolls (5)" originx="3595" originy="2803"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Re-Rolls (6)" path="3688,2871;3688,2871;3814,2872;3815,2872;3813,2742;3813,2742;3687,2743;3687,2743" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Re-Rolls (6)" originx="3753" originy="2805"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Re-Rolls (7)" path="3974,2873;3974,2873;3974,2743;3971,2745;3845,2744;3845,2872;3859,2873" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Re-Rolls (7)" originx="3910" originy="2802"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Re-Rolls (8)" path="4007,2877;4053,2875;4133,2878;4129,2747;4007,2744" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Re-Rolls (8)" originx="4069" originy="2803"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Half-Time" path="309,228;593,227;592,355;308,356" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Half-Time" originx="440" originy="295"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Half-Time" path="2585,356;2871,354;2872,227;2583,229" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Team Half-Time" originx="2726" originy="293"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Re-Rolls" path="590,2874;590,2874;591,2748;591,2748;309,2748;308,2815;306,2873" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Re-Rolls" originx="444" originy="2816"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Re-Rolls" path="2870,2874;2870,2744;2870,2744;2583,2743;2583,2743;2583,2876;2584,2870" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Team Re-Rolls" originx="2722" originy="2812"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Team Score" path="68,757;199,757;199,1045;68,1045" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Score" originx="131" originy="900"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Team Score (1)" path="66,1074;196,1074;196,1206;66,1206" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Score (1)" originx="129" originy="1142"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Team Score (2)" path="67,1231;197,1231;197,1363;67,1363" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Score (2)" originx="130" originy="1299"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Team Score (3)" path="66,1389;197,1389;197,1521;66,1521" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Score (3)" originx="127" originy="1456"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Team Score (4)" path="65,1545;198,1545;198,1677;65,1677" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Score (4)" originx="129" originy="1610"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Team Score (5)" path="66,1703;197,1703;197,1840;66,1840" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Score (5)" originx="130" originy="1769"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Team Score (6)" path="67,1861;196,1861;196,1993;67,1993" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Score (6)" originx="129" originy="1925"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Team Score (7)" path="63,2015;197,2015;197,2150;63,2150" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Score (7)" originx="130" originy="2087"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Team Score (8)" path="65,2176;196,2176;196,2308;65,2308" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team Score (8)" originx="128" originy="2241"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Team Score" path="4279,755;4407,755;4407,1045;4279,1045" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Team Score" originx="4344" originy="896"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Team Score (1)" path="4278,1072;4409,1072;4409,1204;4278,1204" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Team Score (1)" originx="4339" originy="1142"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Team Score (2)" path="4278,1227;4409,1227;4409,1360;4278,1360" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Team Score (2)" originx="4344" originy="1295"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Team Score (3)" path="4278,1387;4408,1387;4408,1516;4278,1516" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Team Score (3)" originx="4340" originy="1452"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Team Score (4)" path="4278,1543;4408,1543;4408,1676;4278,1676" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Team Score (4)" originx="4344" originy="1610"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Team Score (5)" path="4277,1702;4408,1702;4408,1833;4277,1833" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Team Score (5)" originx="4341" originy="1769"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Team Score (6)" path="4277,1858;4408,1858;4408,1991;4277,1991" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Team Score (6)" originx="4342" originy="1926"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Team Score (7)" path="4277,2016;4409,2016;4409,2148;4277,2148" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Team Score (7)" originx="4344" originy="2080"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Team Score (8)" path="4278,2174;4408,2174;4408,2304;4278,2304" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Team Score (8)" originx="4343" originy="2242"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Weather" path="2130,2742;2349,2742;2349,2932;2130,2932" useHighlight="false" useParentGrid="false"/>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red FAME" path="67,151;195,151;195,279;67,279" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red FAME" originx="129" originy="207"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Team" path="65,417;195,417;195,672;65,672" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Red Team" originx="130" originy="539"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue FAME" path="4280,150;4409,150;4409,278;4280,278" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue FAME" originx="4347" originy="210"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Team" path="4278,416;4409,416;4409,671;4278,671" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.RegionGrid fontsize="9" snapto="true" visible="false">
+                            <VASSAL.build.module.map.boardPicker.board.Region name="Blue Team" originx="4344" originy="538"/>
+                        </VASSAL.build.module.map.boardPicker.board.RegionGrid>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Turnover" path="1948,255;2535,255;2535,407;1948,407" useHighlight="false" useParentGrid="false"/>
+                    <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="TrackerZone" path="2012,393;2469,395;2470,549;2013,549" useHighlight="false" useParentGrid="false">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="255,255,0" cornersLegal="false" dotsVisible="false" dx="150.0" dy="150.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="141" y0="22"/>
+                    </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
+                </VASSAL.build.module.map.boardPicker.board.ZonedGrid>
+            </VASSAL.build.module.map.boardPicker.Board>
         </VASSAL.build.module.map.BoardPicker>
         <VASSAL.build.module.map.StackMetrics bottom="40,0" disabled="false" down="37,0" exSepX="6" exSepY="18" top="38,0" unexSepX="2" unexSepY="4" up="39,0"/>
         <VASSAL.build.module.map.ForwardToKeyBuffer/>
@@ -890,6 +1291,27 @@
         </VASSAL.build.module.map.SetupStack>
         <VASSAL.build.module.map.SetupStack name="Red Potions" owningBoard="StreetBowl" useGridLocation="false" x="132" y="479">
             <VASSAL.build.widget.PieceSlot entryName="" gpid="2664" height="0" width="0">+/null/immob;;V	emb2;Activate;2;;Add Potions;2;;Remove Potions;2;;;;1;false;0;0;Red_Potion_0.png,Red_Potion_1.png,Red_Potion_2.png,Red_Potion_3.png;Red Potions (0),Red Potions (1),Red Potions (2)+,Red Potions (3);true;Red Potions;;;false;;1;1;true;65,130;70,130;70,520\	prototype;Markers\\	report;70\,130;$location$: $newPieceName$ *;;;\\\	piece;;;;/	1\	\\	-1\\\	null;0;0;2664</VASSAL.build.widget.PieceSlot>
+        </VASSAL.build.module.map.SetupStack>
+        <VASSAL.build.module.map.SetupStack name="Blue Cheerleaders 7s" owningBoard="Sevens" useGridLocation="false" x="4345" y="478">
+            <VASSAL.build.widget.PieceSlot entryName="" gpid="e65:0" height="0" width="0">+/null/immob;;V	emb2;Activate;2;;Add Cheerleaders;2;;Remove Cheerleaders;2;;;;1;false;0;0;Cheer_Blue_0.png,Cheer_Blue_1.png,Cheer_Blue_2.png,Cheer_Blue_3.png,Cheer_Blue_4.png,Cheer_Blue_5.png;Blue Cheerleaders (0),Blue Cheerleaders (1),Blue Cheerleaders (2)+,Blue Cheerleaders (3),Blue Cheerleaders (4),Blue Cheerleaders (5);true;Blue Cheerleaders;;;false;;1;1;true;65,130;70,130;70,520\	prototype;Markers\\	report;70\,130;$location$: $newPieceName$ *;;;\\\	piece;;;;/	1\	\\	-1\\\	null;0;0;e65:0</VASSAL.build.widget.PieceSlot>
+        </VASSAL.build.module.map.SetupStack>
+        <VASSAL.build.module.map.SetupStack name="Red Cheerleaders 7s" owningBoard="Sevens" useGridLocation="false" x="132" y="479">
+            <VASSAL.build.widget.PieceSlot entryName="" gpid="e65:1" height="0" width="0">+/null/immob;;V	emb2;Activate;2;;Add Cheerleaders;2;;Remove Cheerleaders;2;;;;1;false;0;0;Cheer_Red_0.png,Cheer_Red_1.png,Cheer_Red_2.png,Cheer_Red_3.png,Cheer_Red_4.png,Cheer_Red_5.png;Red Cheerleaders (0),Red Cheerleaders (1),Red Cheerleaders (2)+,Red Cheerleaders (3),Red Cheerleaders (4),Red Cheerleaders (5);true;Red Cheerleaders;;;false;;1;1;true;65,130;70,130;70,520\	prototype;Markers\\	report;70\,130;$location$: $newPieceName$ *;;;\\\	piece;;;;/	1\	\\	-1\\\	null;0;0;e65:1</VASSAL.build.widget.PieceSlot>
+        </VASSAL.build.module.map.SetupStack>
+        <VASSAL.build.module.map.SetupStack location="Blue Cheer Section" name="Blue Assistant Coach 7s" owningBoard="Sevens" useGridLocation="false" x="4345" y="605">
+            <VASSAL.build.widget.PieceSlot entryName="" gpid="e65:2" height="0" width="0">+/null/immob;;V	emb2;Activate;2;;Add Coaches;2;;Remove Coaches;2;;;;1;false;0;0;Asst_Blue_0.png,Asst_Blue_1.png,Asst_Blue_2.png,Asst_Blue_3.png,Asst_Blue_4.png,Asst_Blue_5.png;Blue Assistant Coach (0),Blue Assistant Coach (1),Blue Assistant Coach (2)+,Blue Assistant Coach (3),Blue Assistant Coach (4),Blue Assistant Coach (5);true;Blue Assistant Coach;;;false;;1;1;true;65,130;70,130;70,520\	prototype;Markers\\	report;70\,130;$location$: $newPieceName$ *;;;\\\	piece;;;;/	1\	\\	-1\\\	null;0;0;e65:2</VASSAL.build.widget.PieceSlot>
+        </VASSAL.build.module.map.SetupStack>
+        <VASSAL.build.module.map.SetupStack location="Red Cheer Section" name="Red Assistant Coach 7s" owningBoard="Sevens" useGridLocation="false" x="132" y="605">
+            <VASSAL.build.widget.PieceSlot entryName="" gpid="e65:3" height="0" width="0">+/null/immob;;V	emb2;Activate;2;;Add Coaches;2;;Remove Coaches;2;;;;1;false;0;0;Asst_Red_0.png,Asst_Red_1.png,Asst_Red_2.png,Asst_Red_3.png,Asst_Red_4.png,Asst_Red_5.png;Red Assistant Coach (0),Red Assistant Coach (1),Red Assistant Coach (2)+,Red Assistant Coach (3),Red Assistant Coach (4),Red Assistant Coach (5);true;Red Assistant Coach;;;false;;1;1;true;65,130;70,130;70,520\	prototype;Markers\\	report;70\,130;$location$: $newPieceName$ *;;;\\\	piece;;;;/	1\	\\	-1\\\	null;0;0;e65:3</VASSAL.build.widget.PieceSlot>
+        </VASSAL.build.module.map.SetupStack>
+        <VASSAL.build.module.map.SetupStack location="TrackerZone" name="Weather 7s" owningBoard="Sevens" useGridLocation="false" x="2241" y="472">
+            <VASSAL.build.widget.PieceSlot entryName="" gpid="e65:5" height="0" width="0">+/null/immob;;V	report;87\,130;Weather: $newPieceName$ *;;;Change Weather\	setprop;Weather_Num;true,1,5,true;Change value:87\,130:I\,1;Weather Number;Current Zone\/Current Map\/Module;{Grass Pitch}\\	emb2;Activate;2;;Weather Change;2;;;2;;;;1;false;0;0;weather_nice.png,weather_very_sunny.png,weather_pouring_rain.png,weather_blizzard.png,weather_sweltering_heat.png;+Nice,Very Sunny,Pouring Rain,Blizzard,Sweltering Heat;true;Weather;;;false;weather_num;1;1;true;65,130;87,130;\\\	piece;;;;/	-1\	\\	1\\\	null;0;0;e65:5</VASSAL.build.widget.PieceSlot>
+        </VASSAL.build.module.map.SetupStack>
+        <VASSAL.build.module.map.SetupStack location="TrackerZone" name="Blue Bribes 7s" owningBoard="Sevens" useGridLocation="false" x="2391" y="472">
+            <VASSAL.build.widget.PieceSlot entryName="" gpid="e65:7" height="0" width="0">+/null/immob;;V	emb2;Activate;2;;Add Bribes;2;;Remove Bribes;2;;;;1;false;0;0;Bribe_Blue_0.png,Bribe_Blue_1.png,Bribe_Blue_2.png,Bribe_Blue_3.png,Bribe_Blue_4.png,Bribe_Blue_5.png;Blue Bribes (0),Blue Bribes (1),Blue Bribes (2),Blue Bribes (3),Blue Bribes (4),Blue Bribes (5);true;Blue Bribes;;;false;;1;1;true;65,130;61,0;45,0\	prototype;Markers\\	report;61\,0,45\,0;$newPieceName$ *;;;\\\	piece;;;;/	1\	\\	-1\\\	null;0;0;e65:7</VASSAL.build.widget.PieceSlot>
+        </VASSAL.build.module.map.SetupStack>
+        <VASSAL.build.module.map.SetupStack location="TrackerZone" name="Red Bribes 7s" owningBoard="Sevens" useGridLocation="false" x="2091" y="472">
+            <VASSAL.build.widget.PieceSlot entryName="" gpid="e65:9" height="0" width="0">+/null/immob;;V	emb2;Activate;2;;Add Bribes;2;;Remove Bribes;2;;;;1;false;0;0;Bribe_Red_0.png,Bribe_Red_1.png,Bribe_Red_2.png,Bribe_Red_3.png,Bribe_Red_4.png,Bribe_Red_5.png;Red Bribes (0),Red Bribes (1),Red Bribes (2)+,Red Bribes (3),Red Bribes (4),Red Bribes (5);true;Red Bribes;;;false;;1;1;true;65,130;61,0;45,0\	prototype;Markers\\	report;61\,0,45\,0;$newPieceName$ *;;;\\\	piece;;;;/	1\	\\	-1\\\	null;0;0;e65:9</VASSAL.build.widget.PieceSlot>
         </VASSAL.build.module.map.SetupStack>
     </VASSAL.build.module.Map>
     <VASSAL.build.module.gamepieceimage.GamePieceImageDefinitions>
