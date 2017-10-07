@@ -1,13 +1,10 @@
 import VASSAL.build.AbstractConfigurable;
 import VASSAL.build.Buildable;
 import VASSAL.build.GameModule;
-import VASSAL.build.module.Chatter;
 import VASSAL.build.module.Map;
 import VASSAL.build.module.documentation.HelpFile;
-import VASSAL.build.module.map.StackMetrics;
 import VASSAL.counters.Decorator;
 import VASSAL.counters.GamePiece;
-import VASSAL.counters.MovementMarkable;
 import VASSAL.counters.Stack;
 
 import javax.swing.*;
@@ -66,29 +63,25 @@ public class AutoRollover extends AbstractConfigurable {
     }
 
     private void rolloverButtonPressed(){
-        Chatter chatter = GameModule.getGameModule().getChatter();
 
         Map map = Map.activeMap;
         GamePiece pieces[] = map.getPieces();
-        for (int i = 0; i < pieces.length; i++) {
-            GamePiece piece = Decorator.getOutermost(pieces[i]);
+        for (GamePiece piece : pieces) {
             if(piece instanceof Stack){
-                chatter.show("stack: " + piece.getName());
                 Stack s = (Stack)piece;
                 for (int j = 0; j < s.getPieceCount(); j++) {
-                    GamePiece p = (s.getPieceAt(j));
-                    Object status = p.getProperty("PlayerStatus");
-                    if ((status != null) && (((Integer) status) == 2)) {
-                        chatter.show("Status: " + status.toString());
-                        p.setProperty("PlayerStatus", 1);
-                    }
-
+                    doPlayerRollover(s, j);
                 }
-
-                chatter.show("----");
             }
+        }
+    }
 
-
+    private void doPlayerRollover(Stack s, int j) {
+        GamePiece p = (s.getPieceAt(j));
+        Object status = p.getProperty("PlayerStatus");
+        if ((status != null) && (((Integer) status) == 2)) {
+            GameModule.getGameModule().getChatter().show("Status: " + status.toString());
+            p.setProperty("PlayerStatus", 1);
         }
     }
 }
