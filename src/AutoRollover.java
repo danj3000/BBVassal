@@ -2,6 +2,7 @@ import VASSAL.build.AbstractConfigurable;
 import VASSAL.build.Buildable;
 import VASSAL.build.GameModule;
 import VASSAL.build.module.Chatter;
+import VASSAL.build.module.GameComponent;
 import VASSAL.build.module.Map;
 import VASSAL.build.module.documentation.HelpFile;
 import VASSAL.command.Command;
@@ -13,18 +14,16 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AutoRollover extends AbstractConfigurable {
-    public class RolloverCommand extends Command implements CommandEncoder{
-        public static final String COMMAND_PREFIX = "ROLLOVER:";
+public class AutoRollover extends AbstractConfigurable implements CommandEncoder,GameComponent {
+    public class RolloverCommand extends Command{
+        private String team;
 
-
-
-        public RolloverCommand() {
-
+        public RolloverCommand(String team) {
+            this.team = team;
         }
 
         protected void executeCommand() {
-            Map map = Map.activeMap;
+            Map map = Map.getMapById("Grass Pitch");
             GamePiece playerPieces[] = MapHelper.getPlayers(map);
 //            GameModule.getGameModule().getChatter().show("players: " + playerPieces.length);
 
@@ -54,23 +53,9 @@ public class AutoRollover extends AbstractConfigurable {
         protected Command myUndoCommand() {
             return null;
         }
-
-        public Command decode(String s) {
-            if (s.startsWith(COMMAND_PREFIX)) {
-                return new RolloverCommand();
-            } else {
-                return null;
-            }
-        }
-
-        public String encode(Command c) {
-            if (c instanceof RolloverCommand) {
-                return COMMAND_PREFIX;
-            }
-            else
-                return null;
-        }
     }
+
+    public static final String COMMAND_PREFIX = "ROLLOVER:";
 
     private JButton rolloverButton;
 
@@ -106,6 +91,9 @@ public class AutoRollover extends AbstractConfigurable {
     public void addTo(Buildable buildable) {
         GameModule mod = (GameModule)buildable;
 
+        mod.getGameModule().addCommandEncoder(this);
+        mod.getGameState().addGameComponent(this);
+
         // add button to toolbar
         rolloverButton = new JButton("Rollover");
         rolloverButton.addActionListener(new ActionListener() {
@@ -118,6 +106,8 @@ public class AutoRollover extends AbstractConfigurable {
 
     public void removeFrom(Buildable buildable) {
         GameModule mod = (GameModule)buildable;
+        mod.removeCommandEncoder(this);
+        mod.getGameState().removeGameComponent(this);
 
         mod.getToolBar().remove(rolloverButton);
     }
@@ -125,11 +115,37 @@ public class AutoRollover extends AbstractConfigurable {
     private void rolloverButtonPressed(){
         GameModule mod = GameModule.getGameModule();
 
-        RolloverCommand rc = new RolloverCommand();
+        RolloverCommand rc = new RolloverCommand("red");
         Command c = new Chatter.DisplayText(mod.getChatter(),
                 "Performing automated rollover").append(rc);
         c.execute();
 
         mod.sendAndLog(c);
+    }
+
+    public Command decode(String s) {
+        if (s.startsWith(COMMAND_PREFIX)) {
+            return new RolloverCommand("red");
+        } else {
+            return null;
+        }
+    }
+
+    public String encode(Command c) {
+        if (c instanceof RolloverCommand) {
+            return COMMAND_PREFIX + "RED";
+        }
+        else
+            return null;
+    }
+
+
+    public void setup(boolean b) {
+        // no initialization needed
+    }
+
+    public Command getRestoreCommand() {
+        // no state to maintain
+        return null;
     }
 }
