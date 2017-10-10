@@ -1,9 +1,11 @@
 import VASSAL.build.AbstractConfigurable;
 import VASSAL.build.Buildable;
 import VASSAL.build.GameModule;
+import VASSAL.build.module.Chatter;
 import VASSAL.build.module.Map;
 import VASSAL.build.module.documentation.HelpFile;
-import VASSAL.counters.Decorator;
+import VASSAL.command.Command;
+import VASSAL.command.CommandEncoder;
 import VASSAL.counters.GamePiece;
 import VASSAL.counters.Stack;
 
@@ -12,6 +14,64 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AutoRollover extends AbstractConfigurable {
+    public class RolloverCommand extends Command implements CommandEncoder{
+        public static final String COMMAND_PREFIX = "ROLLOVER:";
+
+
+
+        public RolloverCommand() {
+
+        }
+
+        protected void executeCommand() {
+            Map map = Map.activeMap;
+            GamePiece playerPieces[] = MapHelper.getPlayers(map);
+//            GameModule.getGameModule().getChatter().show("players: " + playerPieces.length);
+
+            for (GamePiece piece : playerPieces) {
+                if(piece instanceof Stack){
+//                    GameModule.getGameModule().getChatter().show("Stack: ");
+                    Stack s = (Stack)piece;
+                    for (int j = 0; j < s.getPieceCount(); j++) {
+                        GamePiece p = (s.getPieceAt(j));
+                        rollover(p);
+                        break;
+                    }
+                }
+                else{
+                    rollover(piece);
+                }
+            }
+        }
+
+        private void rollover(GamePiece p) {
+            Object status = p.getProperty("Status");
+            if ((status != null) && (Integer.parseInt(status.toString()) == 2)) {
+                p.setProperty("Status", 1);
+            }
+        }
+
+        protected Command myUndoCommand() {
+            return null;
+        }
+
+        public Command decode(String s) {
+            if (s.startsWith(COMMAND_PREFIX)) {
+                return new RolloverCommand();
+            } else {
+                return null;
+            }
+        }
+
+        public String encode(Command c) {
+            if (c instanceof RolloverCommand) {
+                return COMMAND_PREFIX;
+            }
+            else
+                return null;
+        }
+    }
+
     private JButton rolloverButton;
 
     public String[] getAttributeDescriptions() {
@@ -63,25 +123,13 @@ public class AutoRollover extends AbstractConfigurable {
     }
 
     private void rolloverButtonPressed(){
+        GameModule mod = GameModule.getGameModule();
 
-        Map map = Map.activeMap;
-        GamePiece pieces[] = map.getPieces();
-        for (GamePiece piece : pieces) {
-            if(piece instanceof Stack){
-                Stack s = (Stack)piece;
-                for (int j = 0; j < s.getPieceCount(); j++) {
-                    doPlayerRollover(s, j);
-                }
-            }
-        }
-    }
+        RolloverCommand rc = new RolloverCommand();
+        Command c = new Chatter.DisplayText(mod.getChatter(),
+                "Performing automated rollover").append(rc);
+        c.execute();
 
-    private void doPlayerRollover(Stack s, int j) {
-        GamePiece p = (s.getPieceAt(j));
-        Object status = p.getProperty("PlayerStatus");
-        if ((status != null) && (((Integer) status) == 2)) {
-            GameModule.getGameModule().getChatter().show("Status: " + status.toString());
-            p.setProperty("PlayerStatus", 1);
-        }
+        mod.sendAndLog(c);
     }
 }
