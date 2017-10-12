@@ -7,10 +7,16 @@ import java.util.List;
 
 public class MapHelper {
     public static GamePiece[] getPlayers(Map map) {
+        return getTeamPlayers(map, "");
+    }
+
+    public static GamePiece[] getTeamPlayers(Map map, String team){
         ArrayList<GamePiece> players = new ArrayList<GamePiece>();
         for (GamePiece piece: map.getPieces()) {
             if (PieceHelper.isPlayer(piece)){
-                players.add(piece);
+                if (team.equals("") || PieceHelper.isTeam(piece, team)) {
+                    players.add(piece);
+                }
             }
         }
         return players.toArray(new GamePiece[0]);

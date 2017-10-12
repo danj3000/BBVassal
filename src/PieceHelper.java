@@ -1,8 +1,11 @@
 import VASSAL.counters.GamePiece;
 import VASSAL.counters.Stack;
 
+// provides helper methods for reading properties because pieces are usually a Stack in BBVassal
 public class PieceHelper {
+    // strategy pattern or lambdas would be nice here!
     public static boolean isPlayer(GamePiece piece) {
+
         if (piece instanceof Stack) {
             Stack s = (Stack) piece;
             for (int j = 0; j < s.getPieceCount(); j++) {
@@ -14,6 +17,24 @@ public class PieceHelper {
         }
         else
             return isAPlayer(piece);
+
+        return false;
+    }
+
+    public static boolean isTeam(GamePiece piece, String team) {
+
+        if (piece instanceof Stack) {
+            Stack s = (Stack) piece;
+            for (int j = 0; j < s.getPieceCount(); j++) {
+                GamePiece p = (s.getPieceAt(j));
+                if(isInTeam(p, team)){
+                    return true;
+                };
+            }
+        }
+        else
+            return isInTeam(piece, team);
+
         return false;
     }
 
@@ -28,5 +49,9 @@ public class PieceHelper {
         }
 
         return false;
+    }
+
+    public static boolean isInTeam(GamePiece piece, String team) {
+        return hasPropertyValue(piece, "Team", team);
     }
 }
