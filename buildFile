@@ -1306,6 +1306,8 @@
         <VASSAL.build.module.map.SetupStack location="Red FAME" name="Red Fame 7s" owningBoard="Sevens" useGridLocation="false" x="130" y="214">
             <VASSAL.build.widget.PieceSlot entryName="" gpid="2686" height="0" width="0">+/null/immob;;V	emb2;Activate;2;;Add FAME;2;;Remove FAME;2;;;;1;false;0;0;Fame_Red_0.png,Fame_Red_1.png,Fame_Red_2.png;Red Fame (0),Red Fame (\+1),Red Fame (\+2)+;true;Red Fame;;;false;;1;1;true;65,130;70,130;70,520\	prototype;Markers\\	report;70\,130;$location$: $newPieceName$ *;;;\\\	piece;;;;/	1\	\\	-1\\\	null;0;0;2686</VASSAL.build.widget.PieceSlot>
         </VASSAL.build.module.map.SetupStack>
+        <AutoRollover/>
+        <VASSAL.build.module.ToolbarMenu description="Rollover Menu" hotkey="" icon="rotate.png" menuItems="Rollover Reds,Rollover Blues" text="Rollover" tooltip="Display Menu Options"/>
     </VASSAL.build.module.Map>
     <VASSAL.build.module.gamepieceimage.GamePieceImageDefinitions>
         <VASSAL.build.module.gamepieceimage.ColorManager/>

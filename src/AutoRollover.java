@@ -10,8 +10,10 @@ import VASSAL.counters.Stack;
 import VASSAL.tools.LaunchButton;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class AutoRollover extends AbstractConfigurable implements CommandEncoder,GameComponent {
 
@@ -99,16 +101,30 @@ public class AutoRollover extends AbstractConfigurable implements CommandEncoder
 
         // add button to toolbar
         redRolloverButton = new JButton("Rollover Reds");
+        Image redImage = null;
+        try {
+            redImage = mod.getDataArchive().getCachedImage("rotate_red.png");
+            redRolloverButton.setIcon(new ImageIcon(redImage));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         redRolloverButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 rolloverButtonPressed("red");
             }
         });
-
         map.getToolBar().add(redRolloverButton);
 
         // add button to toolbar
         blueRolloverButton = new JButton("Rollover Blues");
+        Image blueImage = null;
+        try {
+            blueImage = mod.getDataArchive().getCachedImage("rotate_blue.png");
+            blueRolloverButton.setIcon(new ImageIcon(blueImage));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         blueRolloverButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 rolloverButtonPressed("blue");
