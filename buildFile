@@ -2066,6 +2066,5 @@
         </VASSAL.build.widget.PanelWidget>
     </VASSAL.build.module.ChartWindow>
     <VASSAL.build.module.NotesWindow buttonText="" hotkey="" icon="Notes.png" tooltip="Notes"/>
-    <AutoRollover/>
     <VASSAL.build.module.ToolbarMenu description="Roller" hotkey="" icon="rotate.png" menuItems="Rollover" text="Rollover" tooltip="Display Rollover Options"/>
 </VASSAL.launch.BasicModule>

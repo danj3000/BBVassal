@@ -89,10 +89,12 @@ public class AutoRollover extends AbstractConfigurable implements CommandEncoder
     }
 
 
-    public void addTo(Buildable buildable) {
-        GameModule mod = (GameModule)buildable;
+    public void addTo(Buildable parent) {
+        Map map = (Map)parent;
 
-        mod.getGameModule().addCommandEncoder(this);
+
+        GameModule mod = GameModule.getGameModule();
+        mod.addCommandEncoder(this);
         mod.getGameState().addGameComponent(this);
 
         // add button to toolbar
@@ -103,7 +105,7 @@ public class AutoRollover extends AbstractConfigurable implements CommandEncoder
             }
         });
 
-        mod.getToolBar().add(redRolloverButton);
+        map.getToolBar().add(redRolloverButton);
 
         // add button to toolbar
         blueRolloverButton = new JButton("Rollover Blues");
@@ -113,16 +115,17 @@ public class AutoRollover extends AbstractConfigurable implements CommandEncoder
             }
         });
 
-        mod.getToolBar().add(blueRolloverButton);
+        map.getToolBar().add(blueRolloverButton);
     }
 
     public void removeFrom(Buildable buildable) {
-        GameModule mod = (GameModule)buildable;
+        GameModule mod = GameModule.getGameModule();
         mod.removeCommandEncoder(this);
         mod.getGameState().removeGameComponent(this);
 
-        mod.getToolBar().remove(redRolloverButton);
-        mod.getToolBar().remove(blueRolloverButton);
+        Map map = (Map)buildable;
+        map.getToolBar().remove(redRolloverButton);
+        map.getToolBar().remove(blueRolloverButton);
 
     }
 
