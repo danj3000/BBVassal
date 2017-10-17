@@ -63,28 +63,10 @@ public class HakaTime extends AbstractConfigurable {
 
     private void hakaButtonPressed() {
         Map map = Map.activeMap;
-        GamePiece pieces[] = map.getPieces();
+        GamePiece pieces[] = MapHelper.getPlayers(map);
         for (GamePiece piece : pieces) {
-            if(piece instanceof Stack){
-                Stack s = (Stack)piece;
-                boolean movePiece = isPlayer(s);
-
-                if (movePiece){
-                    s.setPosition(new Point(300,300));
-                }
-            }
+            piece.setPosition(new Point(300, 300));
         }
-    }
-
-    private boolean isPlayer(Stack s) {
-        for (int j = 0; j < s.getPieceCount(); j++) {
-            GamePiece p = (s.getPieceAt(j));
-            Object isPlayer = p.getProperty("IsPlayer");
-            if ((isPlayer != null) && ("true".equalsIgnoreCase(isPlayer.toString()))) {
-                return true;
-            }
-        }
-        return false;
     }
 
 }
