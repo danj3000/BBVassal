@@ -25,4 +25,8 @@ public class MapHelper {
     public static GamePiece getPlayerById(String playerId) {
         return null;
     }
+
+    public static Map getPitchMap() {
+        return Map.getMapById("Grass Pitch");
+    }
 }

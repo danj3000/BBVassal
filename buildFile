@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <VASSAL.launch.BasicModule VassalVersion="3.2.17" description="Games Workshop Blood Bowl (Unauthorized!)" name="Blood Bowl VASSAL - BETA" nextPieceSlotId="2689" version="BETA">
-    <VASSAL.build.module.BasicCommandEncoder/>
+    <BBCounterFactory/>
     <VASSAL.build.module.Documentation>
         <VASSAL.build.module.documentation.AboutScreen fileName="Splash.png" title="Games Workshop - Blood Bowl"/>
         <VASSAL.build.module.documentation.HelpFile fileName="/help/Intro.html" fileType="resource" title="Quick Start"/>
@@ -1837,7 +1837,7 @@
                     </VASSAL.build.widget.PanelWidget>
                     <VASSAL.build.widget.PanelWidget entryName="Ball" fixed="false" nColumns="3" vert="false">
                         <VASSAL.build.widget.ListWidget divider="376" height="509" width="713">
-                            <VASSAL.build.widget.PieceSlot entryName="Ball" gpid="1301" height="150" width="150">+/null/restrict;Blue,Red,Solitaire;false;true	mark;Ball\	AreaOfEffect;0,255,0;25;1;true;Show Area;;;true;;\\	report;;$location$: (Ball in Possession) *;;;Ball Possession\\\	mark;Layer\\\\	immob;;N\\\\\	piece;;;ball.png;Ball/	Ball\	\\	-1\\\	top\\\\	\\\\\	null;0;0;1301</VASSAL.build.widget.PieceSlot>
+                            <VASSAL.build.widget.PieceSlot entryName="Ball" gpid="1301" height="150" width="150">+/null/ScatterTrait	restrict;Blue,Red,Solitaire;false;true\	mark;Ball\\	AreaOfEffect;0,255,0;25;1;true;Show Area;;;true;;\\\	report;;$location$: (Ball in Possession) *;;;Ball Possession\\\\	mark;Layer\\\\\	immob;;N\\\\\\	piece;;;ball.png;Ball/	\	Ball\\	\\\	-1\\\\	top\\\\\	\\\\\\	null;0;0;1301</VASSAL.build.widget.PieceSlot>
                         </VASSAL.build.widget.ListWidget>
                     </VASSAL.build.widget.PanelWidget>
                 </VASSAL.build.widget.BoxWidget>
@@ -2072,4 +2072,5 @@
     </VASSAL.build.module.ChartWindow>
     <VASSAL.build.module.NotesWindow buttonText="" hotkey="" icon="Notes.png" tooltip="Notes"/>
     <VASSAL.build.module.ToolbarMenu description="Roller" hotkey="" icon="rotate.png" menuItems="Rollover" text="Rollover" tooltip="Display Rollover Options"/>
+    <HakaTime/>
 </VASSAL.launch.BasicModule>
