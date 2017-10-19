@@ -1335,7 +1335,7 @@
             <VASSAL.build.widget.PanelWidget entryName="Blue Teams" fixed="false" nColumns="3" vert="false">
                 <VASSAL.build.widget.BoxWidget height="521" width="713">
                     <VASSAL.build.widget.PanelWidget entryName="Amazon (Blue)" fixed="false" nColumns="3" vert="false">
-                        <VASSAL.build.widget.ListWidget divider="642" height="277" width="560">
+                        <VASSAL.build.widget.ListWidget divider="642" height="24" width="136">
                             <VASSAL.build.widget.PieceSlot entryName="Amazon Linewoman (Blue)" gpid="2639" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;34;c;5;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Blue\\	piece;;;Amazon Linewoman (Blue).png;Amazon Linewoman (Blue)/##	~Linewoman~6~3~3~7~Dodge~\	\\	null;0;0;2639</VASSAL.build.widget.PieceSlot>
                             <VASSAL.build.widget.PieceSlot entryName="Amazon Catcher (Blue)" gpid="2655" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;32;c;0;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Blue\\	piece;;;Amazon Catcher (Blue).png;Amazon Catcher (Blue)/##	~Catcher~6~3~3~7~Dodge, Catch~\	\\	null;0;0;2655</VASSAL.build.widget.PieceSlot>
                             <VASSAL.build.widget.PieceSlot entryName="Amazon Thrower (Blue)" gpid="2657" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;30;c;-2;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Blue\\	piece;;;Amazon Thrower (Blue).png;Amazon Thrower (Blue)/##	~Thrower~6~3~3~7~Dodge, Pass~\	\\	null;0;0;2657</VASSAL.build.widget.PieceSlot>
@@ -2063,6 +2063,9 @@
                         <VASSAL.build.widget.Chart chartName="Shoppe of 'Orrors" fileName="Street_Bowl_Rules_Shoppe_Horrors.gif"/>
                         <VASSAL.build.widget.Chart chartName="Weather" fileName="Street_Bowl_Weather.png"/>
                     </VASSAL.build.widget.BoxWidget>
+                </VASSAL.build.widget.PanelWidget>
+                <VASSAL.build.widget.PanelWidget entryName="Sevens" fixed="false" nColumns="3" vert="false">
+                    <VASSAL.build.widget.Chart chartName="Kickoff Table" fileName="Kickoff_table_7s.gif"/>
                 </VASSAL.build.widget.PanelWidget>
             </VASSAL.build.widget.TabWidget>
         </VASSAL.build.widget.PanelWidget>
