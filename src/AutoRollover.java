@@ -6,54 +6,36 @@ import VASSAL.build.module.documentation.HelpFile;
 import VASSAL.command.Command;
 import VASSAL.command.CommandEncoder;
 import VASSAL.counters.GamePiece;
-import VASSAL.counters.Stack;
-import VASSAL.tools.LaunchButton;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class AutoRollover extends AbstractConfigurable implements CommandEncoder,GameComponent {
 
-    public class RolloverCommand extends Command{
-        private String team;
+    private ArrayList<String> victims;
 
-        public RolloverCommand(String team) {
-            this.team = team;
+    public class RolloverTeamCommand extends TeamPlayerStateCommand {
+
+        public RolloverTeamCommand(String team) {
+            super(team);
         }
 
-        protected void executeCommand() {
-            Map map = Map.getMapById("Grass Pitch");
-            GamePiece playerPieces[] = MapHelper.getTeamPlayers(map, team);
-//            GameModule.getGameModule().getChatter().show("players: " + playerPieces.length);
-
-            for (GamePiece piece : playerPieces) {
-                if(piece instanceof Stack){
-//                    GameModule.getGameModule().getChatter().show("Stack: ");
-                    Stack s = (Stack)piece;
-                    for (int j = 0; j < s.getPieceCount(); j++) {
-                        GamePiece p = (s.getPieceAt(j));
-                        rollover(p);
-                        break;
-                    }
-                }
-                else{
-                    rollover(piece);
-                }
-            }
-        }
-
-        private void rollover(GamePiece p) {
+        @Override
+        protected void changePlayerState(GamePiece p) {
             Object status = p.getProperty("Status");
             if ((status != null) && (Integer.parseInt(status.toString()) == 2)) {
                 p.setProperty("Status", 1);
+                victims.add(p.getId());
             }
         }
 
+        @Override
         protected Command myUndoCommand() {
-            return null;
+            return new StunCommand(victims);
         }
     }
 
@@ -148,7 +130,7 @@ public class AutoRollover extends AbstractConfigurable implements CommandEncoder
     private void rolloverButtonPressed(String team){
         GameModule mod = GameModule.getGameModule();
 
-        RolloverCommand rc = new RolloverCommand(team);
+        RolloverTeamCommand rc = new RolloverTeamCommand(team);
         Command c = new Chatter.DisplayText(mod.getChatter(),
                 "Automated Rollover for " + team)
                 .append(rc);
@@ -159,15 +141,16 @@ public class AutoRollover extends AbstractConfigurable implements CommandEncoder
 
     public Command decode(String s) {
         if (s.startsWith(COMMAND_PREFIX)) {
-            return new RolloverCommand(s.substring(COMMAND_PREFIX.length()));
+            String teamString = s.substring(COMMAND_PREFIX.length());
+            return new RolloverTeamCommand(teamString);
         } else {
             return null;
         }
     }
 
     public String encode(Command c) {
-        if (c instanceof RolloverCommand) {
-            return COMMAND_PREFIX + ((RolloverCommand)c).team;
+        if (c instanceof RolloverTeamCommand) {
+            return COMMAND_PREFIX + ((RolloverTeamCommand)c).team;
         }
         else
             return null;

@@ -21,4 +21,8 @@ public class MapHelper {
         }
         return players.toArray(new GamePiece[0]);
     }
+
+    public static GamePiece getPlayerById(String playerId) {
+        return null;
+    }
 }

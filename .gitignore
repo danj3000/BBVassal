@@ -1,2 +1,3 @@
 *.vmod
 out/*.class
+.idea/uiDesigner.xml
