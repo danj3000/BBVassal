@@ -1,6 +1,7 @@
 import VASSAL.build.AbstractConfigurable;
 import VASSAL.build.Buildable;
 import VASSAL.build.GameModule;
+import VASSAL.build.module.Chatter;
 import VASSAL.build.module.Map;
 import VASSAL.build.module.documentation.HelpFile;
 import VASSAL.build.module.map.BoardPicker;
@@ -69,6 +70,9 @@ public class HakaTime extends AbstractConfigurable {
     }
 
     private void hakaButtonPressed() {
+        int yOffSet = 3;
+        String column = "C";
+
         Map map = MapHelper.getPitchMap();
         Collection<Board> boards = map.getBoardPicker().getSelectedBoards();
         Board board = Iterables.get(boards, 0);
@@ -76,19 +80,26 @@ public class HakaTime extends AbstractConfigurable {
         ZonedGrid zGrid = (ZonedGrid) grid;
         Zone z = zGrid.findZone("Pitch");
         MapGrid pitchGrid = z.getGrid();
-        Point point = null;
-        try {
-            point = pitchGrid.getLocation("A1");
-        } catch (MapGrid.BadCoords badCoords) {
-            GameModule.getGameModule().getChatter().show("grid ref not valid");
 
-            badCoords.printStackTrace();
-        }
-        GamePiece pieces[] = MapHelper.getPlayers(map);
-        for (GamePiece piece : pieces) {
+        GamePiece pieces[] = MapHelper.getTeamPlayers(map, "red");
+        movePlayersToHaka(yOffSet, "J", pitchGrid, pieces);
 
+        GamePiece bluePieces[] = MapHelper.getTeamPlayers(map, "blue");
+        movePlayersToHaka(yOffSet, "O", pitchGrid, bluePieces);
+    }
 
-            piece.setPosition(point);
+    private void movePlayersToHaka(int yOffSet, String column, MapGrid grid, GamePiece[] pieces) {
+        Chatter chatter = GameModule.getGameModule().getChatter();
+        for (int i = 0; i < pieces.length; i++) {
+            Point point = null;
+            try {
+                point = grid.getLocation(column +(i+yOffSet));
+                pieces[i].setPosition(point);
+            } catch (MapGrid.BadCoords badCoords) {
+                chatter.show("grid ref not valid");
+
+                badCoords.printStackTrace();
+            }
         }
     }
 
