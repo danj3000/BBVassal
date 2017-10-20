@@ -421,7 +421,7 @@
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Red Endzone" path="278,416;444,415;441,2686;279,2685" useHighlight="false" useParentGrid="false"/>
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Blue Endzone" path="4041,417;4208,414;4206,2685;4040,2687" useHighlight="false" useParentGrid="false"/>
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Pitch" path="444,417;4044,417;4038,2687;444,2688" useHighlight="false" useParentGrid="false">
-                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="255,0,204" cornersLegal="false" dotsVisible="false" dx="150.10000000000005" dy="150.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="667" y0="351">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="255,0,204" cornersLegal="false" dotsVisible="false" dx="150.10000000000005" dy="150.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="667" y0="651">
                             <VASSAL.build.module.map.boardPicker.board.mapgrid.SquareGridNumbering color="255,255,0" first="H" fontSize="15" hDescend="false" hDrawOff="0" hLeading="1" hOff="1" hType="A" locationFormat="$gridLocation$" rotateText="0" sep="" vDescend="false" vDrawOff="0" vLeading="0" vOff="0" vType="N" visible="false"/>
                         </VASSAL.build.module.map.boardPicker.board.SquareGrid>
                     </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
@@ -819,7 +819,7 @@
                         <VASSAL.build.module.map.boardPicker.board.SquareGrid color="51,51,255" cornersLegal="false" dotsVisible="false" dx="150.0" dy="150.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="61" y0="-19"/>
                     </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
                     <VASSAL.build.module.map.boardPicker.board.mapgrid.Zone highlightProperty="" locationFormat="$name$" name="Pitch" path="281,635;3304,635;3304,2324;280,2323" useHighlight="false" useParentGrid="false">
-                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="255,0,204" cornersLegal="false" dotsVisible="false" dx="150.10000000000005" dy="150.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="66" y0="-20">
+                        <VASSAL.build.module.map.boardPicker.board.SquareGrid color="255,0,204" cornersLegal="false" dotsVisible="false" dx="150.10000000000005" dy="150.0" edgesLegal="false" range="Metric" snapTo="true" visible="false" x0="217" y0="580">
                             <VASSAL.build.module.map.boardPicker.board.mapgrid.SquareGridNumbering color="255,255,0" first="H" fontSize="15" hDescend="false" hDrawOff="0" hLeading="1" hOff="1" hType="A" locationFormat="$gridLocation$" rotateText="0" sep="" vDescend="false" vDrawOff="0" vLeading="0" vOff="0" vType="N" visible="false"/>
                         </VASSAL.build.module.map.boardPicker.board.SquareGrid>
                     </VASSAL.build.module.map.boardPicker.board.mapgrid.Zone>
@@ -1308,6 +1308,7 @@
             <VASSAL.build.widget.PieceSlot entryName="" gpid="2686" height="0" width="0">+/null/immob;;V	emb2;Activate;2;;Add FAME;2;;Remove FAME;2;;;;1;false;0;0;Fame_Red_0.png,Fame_Red_1.png,Fame_Red_2.png;Red Fame (0),Red Fame (\+1),Red Fame (\+2)+;true;Red Fame;;;false;;1;1;true;65,130;70,130;70,520\	prototype;Markers\\	report;70\,130;$location$: $newPieceName$ *;;;\\\	piece;;;;/	1\	\\	-1\\\	null;0;0;2686</VASSAL.build.widget.PieceSlot>
         </VASSAL.build.module.map.SetupStack>
         <AutoRollover/>
+        <HakaTime BlueColumn="Q" RedColumn="H"/>
     </VASSAL.build.module.Map>
     <VASSAL.build.module.gamepieceimage.GamePieceImageDefinitions>
         <VASSAL.build.module.gamepieceimage.ColorManager/>
@@ -1539,7 +1540,7 @@
             <VASSAL.build.widget.PanelWidget entryName="Red Teams" fixed="false" nColumns="3" vert="false">
                 <VASSAL.build.widget.BoxWidget height="0" width="0">
                     <VASSAL.build.widget.PanelWidget entryName="Amazon (Red)" fixed="false" nColumns="3" vert="false">
-                        <VASSAL.build.widget.ListWidget divider="604" height="474" width="993">
+                        <VASSAL.build.widget.ListWidget divider="604" height="53" width="713">
                             <VASSAL.build.widget.PieceSlot entryName="Amazon Linewoman (Red)" gpid="1370" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;33;c;-8;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Red\\	piece;;;Amazon Linewoman (Red).png;Amazon Linewoman (Red)/##	~Linewoman~6~3~3~7~Dodge~\	\\	null;0;0;1370</VASSAL.build.widget.PieceSlot>
                             <VASSAL.build.widget.PieceSlot entryName="Amazon Catcher (Red)" gpid="1368" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;32;c;1;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Red\\	piece;;;Amazon Catcher (Red).png;Amazon Catcher (Red)/##	~Catcher~6~3~3~7~Dodge, Catch~\	\\	null;0;0;1368</VASSAL.build.widget.PieceSlot>
                             <VASSAL.build.widget.PieceSlot entryName="Amazon Thrower (Red)" gpid="1386" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;32;c;6;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Red\\	piece;;;Amazon Thrower (Red).png;Amazon Thrower (Red)/##	~Thrower~6~3~3~7~Dodge, Pass~\	\\	null;0;0;1386</VASSAL.build.widget.PieceSlot>
@@ -1562,7 +1563,7 @@
                         </VASSAL.build.widget.ListWidget>
                     </VASSAL.build.widget.PanelWidget>
                     <VASSAL.build.widget.PanelWidget entryName="Chaos Pact (Red)" fixed="false" nColumns="3" vert="false">
-                        <VASSAL.build.widget.ListWidget divider="-1" height="521" width="907">
+                        <VASSAL.build.widget.ListWidget divider="488" height="104" width="713">
                             <VASSAL.build.widget.PieceSlot entryName="Chaos Pact Marauder (Red)" gpid="1500" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;34;c;-2;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Red\\	piece;;;Chaos Pact Marauder (Red).png;Chaos Pact Marauder (Red)/##	~Marauder~6~3~3~8~None~\	\\	null;0;0;1500</VASSAL.build.widget.PieceSlot>
                             <VASSAL.build.widget.PieceSlot entryName="Chaos Pact Goblin Renegade (Red)" gpid="1499" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;31;c;0;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Red\\	piece;;;Chaos Pact Goblin Renegade (Red).png;Chaos Pact Goblin Renegade (Red)/##	~Goblin Renegade~6~2~3~7~Animosity, Dodge, Right Stuff, Stunty~\	\\	null;0;0;1499</VASSAL.build.widget.PieceSlot>
                             <VASSAL.build.widget.PieceSlot entryName="Chaos Pact Skaven Renegade (Red)" gpid="1514" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;28;c;0;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Red\\	piece;;;Chaos Pact Skaven Renegade (Red).png;Chaos Pact Skaven Renegade (Red)/##	~Skaven Renegade~7~3~3~7~Animosity~\	\\	null;0;0;1514</VASSAL.build.widget.PieceSlot>
@@ -1582,7 +1583,7 @@
                         </VASSAL.build.widget.ListWidget>
                     </VASSAL.build.widget.PanelWidget>
                     <VASSAL.build.widget.PanelWidget entryName="Dwarf (Red)" fixed="false" nColumns="3" vert="false">
-                        <VASSAL.build.widget.ListWidget divider="339" height="192" width="713">
+                        <VASSAL.build.widget.ListWidget divider="339" height="53" width="713">
                             <VASSAL.build.widget.PieceSlot entryName="Dwarf Blocker (Red)" gpid="1593" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;29;c;5;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Red\\	piece;;;Dwarf Blocker (Red).png;Dwarf Blocker (Red)/##	~Blocker~4~3~2~9~Block, Tackle, Thick Skull~\	\\	null;0;0;1593</VASSAL.build.widget.PieceSlot>
                             <VASSAL.build.widget.PieceSlot entryName="Dwarf Runner (Red)" gpid="1610" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;27;c;7;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Red\\	piece;;;Dwarf Runner (Red).png;Dwarf Runner (Red)/##	~Runner~6~3~3~8~Sure Hands, Thick Skull~\	\\	null;0;0;1610</VASSAL.build.widget.PieceSlot>
                             <VASSAL.build.widget.PieceSlot entryName="Dwarf Blitzer (Red)" gpid="1591" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;36;c;5;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Red\\	piece;;;Dwarf Blitzer (Red).png;Dwarf Blitzer (Red)/##	~Blitzer~5~3~3~9~Block, Thick Skull~\	\\	null;0;0;1591</VASSAL.build.widget.PieceSlot>
@@ -2072,5 +2073,5 @@
     </VASSAL.build.module.ChartWindow>
     <VASSAL.build.module.NotesWindow buttonText="" hotkey="" icon="Notes.png" tooltip="Notes"/>
     <VASSAL.build.module.ToolbarMenu description="Roller" hotkey="" icon="rotate.png" menuItems="Rollover" text="Rollover" tooltip="Display Rollover Options"/>
-    <HakaTime/>
+    <BBCounterFactory/>
 </VASSAL.launch.BasicModule>

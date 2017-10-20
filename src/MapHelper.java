@@ -1,8 +1,14 @@
 import VASSAL.build.module.Map;
+import VASSAL.build.module.map.boardPicker.Board;
+import VASSAL.build.module.map.boardPicker.board.MapGrid;
+import VASSAL.build.module.map.boardPicker.board.ZonedGrid;
+import VASSAL.build.module.map.boardPicker.board.mapgrid.Zone;
 import VASSAL.counters.GamePiece;
 import VASSAL.counters.Stack;
+import com.google.common.collect.Iterables;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class MapHelper {
@@ -28,5 +34,13 @@ public class MapHelper {
 
     public static Map getPitchMap() {
         return Map.getMapById("Grass Pitch");
+    }
+
+    static MapGrid getPitchGrid() {
+        Map map = getPitchMap();
+        Board board = Iterables.get(map.getBoardPicker().getSelectedBoards(), 0);
+        ZonedGrid zGrid = (ZonedGrid) board.getGrid();
+        Zone pitchZone = zGrid.findZone("Pitch");
+        return pitchZone.getGrid();
     }
 }
