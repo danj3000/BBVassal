@@ -2,6 +2,7 @@ import VASSAL.build.AbstractConfigurable;
 import VASSAL.build.Buildable;
 import VASSAL.build.GameModule;
 import VASSAL.build.module.Chatter;
+import VASSAL.build.module.GameComponent;
 import VASSAL.build.module.Map;
 import VASSAL.build.module.documentation.HelpFile;
 import VASSAL.build.module.map.boardPicker.Board;
@@ -15,18 +16,42 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class HakaTime extends AbstractConfigurable implements CommandEncoder  {
+public class HakaTime extends AbstractConfigurable implements CommandEncoder, GameComponent {
     public static final String RED_COLUMN = "RedColumn";
     public static final String BLUE_COLUMN = "BlueColumn";
+    public static final String DELIMITER = ";";
     private final int yOffSet = 3;
     private String redColumn = "H";
     private String blueColumn = "Q";
+    public static final String COMMAND_PREFIX = "HAKA:";
 
     public Command decode(String s) {
-        return null;
+        if (s.startsWith(COMMAND_PREFIX)) {
+            String teamString = s.substring(COMMAND_PREFIX.length());
+            String[] params = teamString.split(DELIMITER);
+            return new HakaCommand(params[0],Integer.parseInt(params[1]),params[2]);
+        } else {
+            return null;
+        }
+
     }
 
     public String encode(Command command) {
+        if (command instanceof HakaCommand) {
+            HakaCommand hc = (HakaCommand)command;
+            return COMMAND_PREFIX + hc.team + DELIMITER + hc.yOffSet + DELIMITER + hc.xColumn;
+        }
+        else
+            return null;
+    }
+
+
+    public void setup(boolean gameStarting) {
+        // no initialization needed?
+    }
+
+    public Command getRestoreCommand() {
+        // no state to maintain
         return null;
     }
 
@@ -48,6 +73,7 @@ public class HakaTime extends AbstractConfigurable implements CommandEncoder  {
 
             GamePiece pieces[] = MapHelper.getTeamPlayers(map, team);
             movePlayersToHaka(yOffSet, xColumn,  pieces);
+            
         }
 
         protected Command myUndoCommand() {
@@ -117,6 +143,9 @@ public class HakaTime extends AbstractConfigurable implements CommandEncoder  {
     }
 
     public void addTo(Buildable parent) {
+        GameModule mod = GameModule.getGameModule();
+        mod.addCommandEncoder(this);
+        mod.getGameState().addGameComponent(this);
 
         // add button to toolbar
         hakaButton = new JButton("Haka Time");
@@ -131,6 +160,10 @@ public class HakaTime extends AbstractConfigurable implements CommandEncoder  {
     }
 
     public void removeFrom(Buildable buildable) {
+        GameModule mod = GameModule.getGameModule();
+
+        mod.removeCommandEncoder(this);
+        mod.getGameState().removeGameComponent(this);
         Map map = (Map)buildable;
 
         map.getToolBar().remove(hakaButton);
