@@ -1309,6 +1309,8 @@
         </VASSAL.build.module.map.SetupStack>
         <AutoRollover/>
         <HakaTime BlueColumn="Q" RedColumn="H"/>
+        <VASSAL.build.module.MultiActionButton description="Haka Multi-Button" hotkey="" icon="separate_16.png" menuItems="Haka Time,Clear Status" text="Reset Teams" tooltip="Reset Teams"/>
+        <VASSAL.build.module.map.MassKeyCommand buttonHotkey="" buttonText="Clear Status" deckCount="-1" filter="" hotkey="69,130" icon="" name="Clear Status" reportFormat="" reportSingle="false" singleMap="true" tooltip="Clear Status"/>
     </VASSAL.build.module.Map>
     <VASSAL.build.module.gamepieceimage.GamePieceImageDefinitions>
         <VASSAL.build.module.gamepieceimage.ColorManager/>
@@ -1540,7 +1542,7 @@
             <VASSAL.build.widget.PanelWidget entryName="Red Teams" fixed="false" nColumns="3" vert="false">
                 <VASSAL.build.widget.BoxWidget height="0" width="0">
                     <VASSAL.build.widget.PanelWidget entryName="Amazon (Red)" fixed="false" nColumns="3" vert="false">
-                        <VASSAL.build.widget.ListWidget divider="604" height="53" width="713">
+                        <VASSAL.build.widget.ListWidget divider="604" height="110" width="713">
                             <VASSAL.build.widget.PieceSlot entryName="Amazon Linewoman (Red)" gpid="1370" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;33;c;-8;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Red\\	piece;;;Amazon Linewoman (Red).png;Amazon Linewoman (Red)/##	~Linewoman~6~3~3~7~Dodge~\	\\	null;0;0;1370</VASSAL.build.widget.PieceSlot>
                             <VASSAL.build.widget.PieceSlot entryName="Amazon Catcher (Red)" gpid="1368" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;32;c;1;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Red\\	piece;;;Amazon Catcher (Red).png;Amazon Catcher (Red)/##	~Catcher~6~3~3~7~Dodge, Catch~\	\\	null;0;0;1368</VASSAL.build.widget.PieceSlot>
                             <VASSAL.build.widget.PieceSlot entryName="Amazon Thrower (Red)" gpid="1386" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;32;c;6;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Red\\	piece;;;Amazon Thrower (Red).png;Amazon Thrower (Red)/##	~Thrower~6~3~3~7~Dodge, Pass~\	\\	null;0;0;1386</VASSAL.build.widget.PieceSlot>
@@ -1683,7 +1685,7 @@
                         </VASSAL.build.widget.ListWidget>
                     </VASSAL.build.widget.PanelWidget>
                     <VASSAL.build.widget.PanelWidget entryName="Pro Elf (Red)" fixed="false" nColumns="3" vert="false">
-                        <VASSAL.build.widget.ListWidget divider="-1" height="521" width="907">
+                        <VASSAL.build.widget.ListWidget divider="619" height="110" width="713">
                             <VASSAL.build.widget.PieceSlot entryName="Pro Elf Lineman (Red)" gpid="2170" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;35;c;2;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Red\\	piece;;;Pro Elf Lineman (Red).png;Pro Elf Lineman (Red)/##	~Lineman~6~3~4~7~None~\	\\	null;0;0;2170</VASSAL.build.widget.PieceSlot>
                             <VASSAL.build.widget.PieceSlot entryName="Pro Elf Thrower (Red)" gpid="2186" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;32;c;0;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Red\\	piece;;;Pro Elf Thrower (Red).png;Pro Elf Thrower (Red)/##	~Thrower~6~3~4~7~Pass~\	\\	null;0;0;2186</VASSAL.build.widget.PieceSlot>
                             <VASSAL.build.widget.PieceSlot entryName="Pro Elf Catcher (Red)" gpid="2166" height="148" width="148">+/null/label;74,130;Change Number;26;;0,0,0;c;44;c;3;b;c;$pieceName$ ($label$);SansSerif;1;0;JerseyNumber;Jersey Number	propertysheet;0Name~0Position~0MA~0ST~0AG~0AV~1Skill~1Notes;Properties;;1;;;;80,130\	prototype;Proto_Player_Red\\	piece;;;Pro Elf Catcher (Red).png;Pro Elf Catcher (Red)/##	~Catcher~8~3~4~7~Catch, Nerves of Steel~\	\\	null;0;0;2166</VASSAL.build.widget.PieceSlot>
