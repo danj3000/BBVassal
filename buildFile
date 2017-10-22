@@ -1307,7 +1307,6 @@
         <VASSAL.build.module.map.SetupStack location="Red FAME" name="Red Fame 7s" owningBoard="Sevens" useGridLocation="false" x="130" y="214">
             <VASSAL.build.widget.PieceSlot entryName="" gpid="2686" height="0" width="0">+/null/immob;;V	emb2;Activate;2;;Add FAME;2;;Remove FAME;2;;;;1;false;0;0;Fame_Red_0.png,Fame_Red_1.png,Fame_Red_2.png;Red Fame (0),Red Fame (\+1),Red Fame (\+2)+;true;Red Fame;;;false;;1;1;true;65,130;70,130;70,520\	prototype;Markers\\	report;70\,130;$location$: $newPieceName$ *;;;\\\	piece;;;;/	1\	\\	-1\\\	null;0;0;2686</VASSAL.build.widget.PieceSlot>
         </VASSAL.build.module.map.SetupStack>
-        <AutoRollover/>
         <HakaTime BlueColumn="Q" RedColumn="H"/>
         <VASSAL.build.module.MultiActionButton description="Haka Multi-Button" hotkey="" icon="separate_16.png" menuItems="Haka Time,Clear Status" text="Reset Teams" tooltip="Reset Teams"/>
         <VASSAL.build.module.map.MassKeyCommand buttonHotkey="" buttonText="Clear Status" deckCount="-1" filter="" hotkey="69,130" icon="" name="Clear Status" reportFormat="" reportSingle="false" singleMap="true" tooltip="Clear Status"/>
