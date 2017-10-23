@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<VASSAL.launch.BasicModule VassalVersion="3.2.17" description="Games Workshop Blood Bowl (Unauthorized!)" name="Blood Bowl VASSAL - BETA" nextPieceSlotId="2689" version="BETA">
+<VASSAL.launch.BasicModule VassalVersion="3.2.17" description="Games Workshop Blood Bowl (Unauthorized!)" name="Blood Bowl VASSAL" nextPieceSlotId="2689" version="BETA">
     <BBCounterFactory/>
     <VASSAL.build.module.Documentation>
         <VASSAL.build.module.documentation.AboutScreen fileName="Splash.png" title="Games Workshop - Blood Bowl"/>
