@@ -1196,7 +1196,7 @@
         <VASSAL.build.module.map.MassKeyCommand buttonHotkey="" buttonText="Clear Blitz" deckCount="-1" filter="" hotkey="39,130" icon="/images/keyCommand.gif" name="Clear Blitz" reportFormat="" reportSingle="true" singleMap="false" tooltip="Clear Blitz"/>
         <VASSAL.build.module.map.MassKeyCommand buttonHotkey="" buttonText="Clear Blocks" deckCount="-1" filter="" hotkey="40,130" icon="/images/keyCommand.gif" name="Clear Blocks" reportFormat="" reportSingle="true" singleMap="false" tooltip="Clear Blocks"/>
         <VASSAL.build.module.ToolbarMenu description="Rollover Menu" hotkey="" icon="rotate_16.png" menuItems="Rollover Reds,Rollover Blues" text="Rollover" tooltip="Display Menu Options"/>
-        <VASSAL.build.module.MultiActionButton description="End Turn" hotkey="10,130" icon="Turnover.png" menuItems=",Clear Blocks,Clear Moves,Clear Tackle Zones,Clear Blitz,Clear Actions,TurnoverText,TurnoverSound" text="" tooltip="End Turn"/>
+        <VASSAL.build.module.MultiActionButton description="End Turn" hotkey="10,130" icon="Turnover_50.png" menuItems=",Clear Blocks,Clear Moves,Clear Tackle Zones,Clear Blitz,Clear Actions,TurnoverText,TurnoverSound" text="" tooltip="End Turn"/>
         <VASSAL.build.module.map.SetupStack location="Blue Team Score" name="Blue Score" owningBoard="Grass Pitch" useGridLocation="false" x="4332" y="901">
             <VASSAL.build.widget.PieceSlot entryName="Blue Score Marker" gpid="1289" height="126" width="126">+/null/playSound;victory-score.wav;;63743,0,PlaySoundMoving;true	prototype;Markers\	piece;;;Blue_Score.png;Blue Score Marker/	\	null;0;0;1289</VASSAL.build.widget.PieceSlot>
         </VASSAL.build.module.map.SetupStack>
@@ -1333,7 +1333,7 @@
         <VASSAL.build.module.PrototypeDefinition name="Proto_Player_Blue">+/null/prototype;Proto_Blue	prototype;Proto_Player\	piece;;;;/	\	null;256;74;</VASSAL.build.module.PrototypeDefinition>
         <VASSAL.build.module.PrototypeDefinition name="Proto_Player_Red">+/null/prototype;Proto_Red	prototype;Proto_Player\	piece;;;;/	\	null;256;74;</VASSAL.build.module.PrototypeDefinition>
     </VASSAL.build.module.PrototypesContainer>
-    <VASSAL.build.module.PieceWindow hidden="false" hotkey="" icon="Teams_Icon.png" name="Players and Markers" text="" tooltip="Show/Hide the Pieces window">
+    <VASSAL.build.module.PieceWindow hidden="false" hotkey="" icon="Teams_Icon_50.png" name="Players and Markers" text="" tooltip="Show/Hide the Pieces window">
         <VASSAL.build.widget.TabWidget>
             <VASSAL.build.widget.PanelWidget entryName="Blue Teams" fixed="false" nColumns="3" vert="false">
                 <VASSAL.build.widget.BoxWidget height="521" width="713">
@@ -1970,7 +1970,7 @@
             <VASSAL.build.module.SpecialDieFace icon="1d66.png" text="6" value="6"/>
         </VASSAL.build.module.SpecialDie>
     </VASSAL.build.module.SpecialDiceButton>
-    <VASSAL.build.module.PrivateMap allowMultiple="false" backgroundcolor="255,255,255" buttonName="" changeFormat="$message$" color="255,0,51" createFormat="$pieceName$ created in $location$" edgeHeight="10" edgeWidth="10" hotkey="" icon="Red_Dugout_Button.png" launch="true" mapName="Red Team Dugout" markMoved="Never" markUnmovedIcon="/images/unmoved.gif" markUnmovedText="" markUnmovedTooltip="Mark all pieces on this map as not moved" moveKey="10,130" moveToFormat="$pieceName$ moves $previousLocation$ -&gt; $location$ *" moveWithinFormat="$pieceName$ moves $previousLocation$ -&gt; $location$ *" side="Red,Solitaire,Observer,Blue" thickness="3" visible="true">
+    <VASSAL.build.module.PrivateMap allowMultiple="false" backgroundcolor="255,255,255" buttonName="" changeFormat="$message$" color="255,0,51" createFormat="$pieceName$ created in $location$" edgeHeight="10" edgeWidth="10" hotkey="" icon="Red_Dugout_Button_50.png" launch="true" mapName="Red Team Dugout" markMoved="Never" markUnmovedIcon="/images/unmoved.gif" markUnmovedText="" markUnmovedTooltip="Mark all pieces on this map as not moved" moveKey="10,130" moveToFormat="$pieceName$ moves $previousLocation$ -&gt; $location$ *" moveWithinFormat="$pieceName$ moves $previousLocation$ -&gt; $location$ *" side="Red,Solitaire,Observer,Blue" thickness="3" visible="true">
         <VASSAL.build.module.map.BoardPicker addColumnText="Add column" addRowText="Add row" boardPrompt="Select board" slotHeight="468" slotScale="0.2" slotWidth="1000" title="Choose Boards">
             <setup>Red Team DugoutBoardPicker	Red Team Dugout	0	0</setup>
             <VASSAL.build.module.map.boardPicker.Board image="Dugout_Red.png" name="Red Team Dugout" reversible="false">
@@ -2006,7 +2006,7 @@
         <VASSAL.build.module.map.MassKeyCommand buttonHotkey="" buttonText="Clear Blocks" deckCount="-1" filter="" hotkey="40,130" icon="/images/keyCommand.gif" name="Clear Blocks" reportFormat="" reportSingle="true" singleMap="true" tooltip="Clear Blocks"/>
         <VASSAL.build.module.MultiActionButton description="Clear Markers" hotkey="10,130" icon="" menuItems=",Clear Blocks,Clear Moves" text="Clear Markers" tooltip="Clear Markers"/>
     </VASSAL.build.module.PrivateMap>
-    <VASSAL.build.module.PrivateMap allowMultiple="false" backgroundcolor="255,255,255" buttonName="" changeFormat="$message$" color="255,0,51" createFormat="$pieceName$ created in $location$" edgeHeight="0" edgeWidth="0" hotkey="" icon="Blue_Dugout_Button.png" launch="true" mapName="Blue Team Dugout" markMoved="Never" markUnmovedIcon="/images/unmoved.gif" markUnmovedText="" markUnmovedTooltip="Mark all pieces on this map as not moved" moveKey="10,130" moveToFormat="$pieceName$ moves $previousLocation$ -&gt; $location$ *" moveWithinFormat="$pieceName$ moves $previousLocation$ -&gt; $location$ *" side="Blue,Solitaire,Observer,Red" thickness="3" visible="true">
+    <VASSAL.build.module.PrivateMap allowMultiple="false" backgroundcolor="255,255,255" buttonName="" changeFormat="$message$" color="255,0,51" createFormat="$pieceName$ created in $location$" edgeHeight="0" edgeWidth="0" hotkey="" icon="Blue_Dugout_Button_50.png" launch="true" mapName="Blue Team Dugout" markMoved="Never" markUnmovedIcon="/images/unmoved.gif" markUnmovedText="" markUnmovedTooltip="Mark all pieces on this map as not moved" moveKey="10,130" moveToFormat="$pieceName$ moves $previousLocation$ -&gt; $location$ *" moveWithinFormat="$pieceName$ moves $previousLocation$ -&gt; $location$ *" side="Blue,Solitaire,Observer,Red" thickness="3" visible="true">
         <VASSAL.build.module.map.BoardPicker addColumnText="Add column" addRowText="Add row" boardPrompt="Select board" slotHeight="468" slotScale="0.2" slotWidth="1000" title="Choose Boards">
             <setup>Blue Team DugoutBoardPicker	Blue Team Dugout	0	0</setup>
             <VASSAL.build.module.map.boardPicker.Board image="Dugout_Blue.png" name="Blue Team Dugout" reversible="false">
@@ -2042,7 +2042,7 @@
         <VASSAL.build.module.map.MassKeyCommand buttonHotkey="" buttonText="Clear Blocks" deckCount="-1" filter="" hotkey="40,130" icon="/images/keyCommand.gif" name="Clear Blocks" reportFormat="" reportSingle="true" singleMap="true" tooltip="Clear Blocks"/>
         <VASSAL.build.module.MultiActionButton description="Clear Markers" hotkey="10,130" icon="" menuItems=",Clear Blocks,Clear Moves" text="Clear Markers" tooltip="Clear Markers"/>
     </VASSAL.build.module.PrivateMap>
-    <VASSAL.build.module.ChartWindow hotkey="" icon="Charts_Icon.png" name="Charts and Tables" text="" tooltip="Charts and Tables">
+    <VASSAL.build.module.ChartWindow hotkey="" icon="Charts_Icon_50.png" name="Charts and Tables" text="" tooltip="Charts and Tables">
         <VASSAL.build.widget.PanelWidget entryName="Charts &amp; Tables" fixed="false" nColumns="3" vert="false">
             <VASSAL.build.widget.TabWidget entryName="Game Style">
                 <VASSAL.build.widget.PanelWidget entryName="Traditional" fixed="false" nColumns="3" vert="false">
@@ -2073,6 +2073,6 @@
             </VASSAL.build.widget.TabWidget>
         </VASSAL.build.widget.PanelWidget>
     </VASSAL.build.module.ChartWindow>
-    <VASSAL.build.module.NotesWindow buttonText="" hotkey="" icon="Notes.png" tooltip="Notes"/>
+    <VASSAL.build.module.NotesWindow buttonText="" hotkey="" icon="Notes_50.png" tooltip="Notes"/>
     <BBCounterFactory/>
 </VASSAL.launch.BasicModule>

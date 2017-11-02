@@ -1,0 +1,38 @@
+<project name="BBVassal">
+    <property name="version" value="BETA" />
+
+    <target name="clean">
+        <echo message="deleting standard module" />
+        <delete file="build/Blood_Bowl_Vassal_${ver}.vmod" />
+    </target>
+
+    <target name="zipmod">
+        <property name="ver" value="${version}" />
+        <antcall target="clean" />
+
+        <echo message="building standard module" />
+        <zip destfile="build/Blood_Bowl_Vassal_${ver}.vmod">
+            <file file="buildFile" />
+            <file file="moduledata" />
+            <zipfileset dir="images" prefix="images" />
+            <zipfileset dir="sounds" prefix="sounds" />
+            <fileset dir="out" includes="*.class" />
+            <file file="Kickoff_Table.html" />
+        </zip>
+    </target>
+
+    <target name="zipmod_lowres">
+        <property name="ver" value="${version}_LR" />
+        <antcall target="clean" />
+
+        <echo message="building lowres ${ver}" />
+        <antcall target="zipmod">
+            <param name="ver" value="${ver}" />
+        </antcall>
+    </target>
+
+    <target name="buildall" >
+        <antcall target="zipmod" />
+        <antcall target="zipmod_lowres" />
+    </target>
+</project>
