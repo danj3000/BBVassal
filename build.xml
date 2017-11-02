@@ -2,18 +2,21 @@
     <property name="version" value="BETA" />
 
     <target name="clean">
-        <echo message="deleting standard module" />
+        <echo message="deleting module ${ver}" />
         <delete file="build/Blood_Bowl_Vassal_${ver}.vmod" />
+    </target>
+
+    <target name="copyxml" >
+        <copy file="buildFile" todir="build" overwrite="true" />
+        <copy file="moduledata" todir="build" overwrite="true" />
     </target>
 
     <target name="zipmod">
         <property name="ver" value="${version}" />
-        <antcall target="clean" />
 
-        <echo message="building standard module" />
         <zip destfile="build/Blood_Bowl_Vassal_${ver}.vmod">
-            <file file="buildFile" />
-            <file file="moduledata" />
+            <file file="build/buildFile" />
+            <file file="build/moduledata" />
             <zipfileset dir="images" prefix="images" />
             <zipfileset dir="sounds" prefix="sounds" />
             <fileset dir="out" includes="*.class" />
@@ -21,10 +24,31 @@
         </zip>
     </target>
 
-    <target name="zipmod_lowres">
+    <target name="build_standard">
+        <property name="ver" value="${version}" />
+        <antcall target="clean" />
+        <antcall target="copyxml" />
+
+        <echo message="building ${ver}" />
+        <antcall target="zipmod">
+            <param name="ver" value="${ver}" />
+        </antcall>
+    </target>
+
+    <target name="build_lowres">
         <property name="ver" value="${version}_LR" />
         <antcall target="clean" />
+        <antcall target="copyxml" />
 
+        <replace file="build/buildFile" token="BETA" value="${ver}" />
+        <replace file="build/moduledata" token="BETA" value="${ver}" />
+        <replace file="build/buildFile" token="_50" value="_16" />
+        <replace file="build/buildFile" >
+            <replacetoken><![CDATA[<VASSAL.i18n.Language/>]]></replacetoken>
+            <replacevalue><![CDATA[<VASSAL.build.module.ToolbarMenu description="BlockButton" hotkey="" icon="One_Die_Icon_16.png" menuItems="1db,2db,3db" text="Block" tooltip="Display Block Options"/>
+    <VASSAL.build.module.ToolbarMenu description="DiceButton" hotkey="" icon="1d66_16.png" menuItems="1d6,2d6,1d8,Kick/CAS,d?" text="Dice" tooltip="Display Dice Options"/>
+    <VASSAL.i18n.Language/>]]></replacevalue>
+        </replace>
         <echo message="building lowres ${ver}" />
         <antcall target="zipmod">
             <param name="ver" value="${ver}" />
@@ -32,7 +56,7 @@
     </target>
 
     <target name="buildall" >
-        <antcall target="zipmod" />
-        <antcall target="zipmod_lowres" />
+        <antcall target="build_standard" />
+        <antcall target="build_lowres" />
     </target>
 </project>
