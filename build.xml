@@ -1,5 +1,5 @@
 <project name="BBVassal">
-    <property name="version" value="BETA" />
+    <property name="version" value="DEV" />
 
     <target name="clean">
         <echo message="deleting module ${ver}" />
@@ -9,6 +9,16 @@
     <target name="copyxml" >
         <copy file="buildFile" todir="build" overwrite="true" />
         <copy file="moduledata" todir="build" overwrite="true" />
+    </target>
+
+    <target name="extractxml" >
+        <echo message="Extracting zip file" />
+        <unzip src="build/Blood_Bowl_Vassal_DEV.vmod"  dest="." overwrite="true">
+            <patternset>
+                <include name="buildFile"/>
+                <include name="moduledata"/>
+            </patternset>
+        </unzip>
     </target>
 
     <target name="zipmod">
@@ -40,8 +50,8 @@
         <antcall target="clean" />
         <antcall target="copyxml" />
 
-        <replace file="build/buildFile" token="BETA" value="${ver}" />
-        <replace file="build/moduledata" token="BETA" value="${ver}" />
+        <replace file="build/buildFile" token="DEV" value="${ver}" />
+        <replace file="build/moduledata" token="DEV" value="${ver}" />
         <replace file="build/buildFile" token="_50" value="_16" />
         <replace file="build/buildFile" >
             <replacetoken><![CDATA[<VASSAL.i18n.Language/>]]></replacetoken>

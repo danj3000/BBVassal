@@ -2,3 +2,4 @@
 out/*.class
 .idea/uiDesigner.xml
 .idea/workspace.xml
+build/
