@@ -21,6 +21,13 @@
         </unzip>
     </target>
 
+    <target name="setversion">
+        <property name="ver" value="${version}" />
+
+        <replace file="build/buildFile" token="DEV" value="${ver}" />
+        <replace file="build/moduledata" token="DEV" value="${ver}" />
+    </target>
+
     <target name="zipmod">
         <property name="ver" value="${version}" />
 
@@ -39,6 +46,10 @@
         <antcall target="clean" />
         <antcall target="copyxml" />
 
+        <antcall target="setversion">
+            <param name="ver" value="${ver}" />
+        </antcall>
+
         <echo message="building ${ver}" />
         <antcall target="zipmod">
             <param name="ver" value="${ver}" />
@@ -50,8 +61,10 @@
         <antcall target="clean" />
         <antcall target="copyxml" />
 
-        <replace file="build/buildFile" token="DEV" value="${ver}" />
-        <replace file="build/moduledata" token="DEV" value="${ver}" />
+        <antcall target="setversion">
+            <param name="ver" value="${ver}" />
+        </antcall>
+
         <replace file="build/buildFile" token="_50" value="_16" />
         <replace file="build/buildFile" >
             <replacetoken><![CDATA[<VASSAL.i18n.Language/>]]></replacetoken>
