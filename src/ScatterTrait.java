@@ -1,8 +1,10 @@
 import VASSAL.build.GameModule;
+import VASSAL.build.module.Chatter;
 import VASSAL.build.module.DieRoll;
 import VASSAL.build.module.documentation.HelpFile;
 import VASSAL.command.ChangePiece;
 import VASSAL.command.Command;
+import VASSAL.command.MoveTracker;
 import VASSAL.counters.*;
 
 import javax.swing.*;
@@ -27,22 +29,6 @@ public class ScatterTrait extends Decorator implements EditablePiece  {
         setInner(piece);
     }
 
-    @Override
-    public Command keyEvent(KeyStroke stroke) {
-        Command c = null;
-        if (scatterCommand.equals(stroke)) {
-            Decorator outer = this.getOuter();
-
-            Random ran = GameModule.getGameModule().getRNG();
-
-            int r = ran.nextInt(8) + 1;
-            GameModule.getGameModule().getChatter().show("Dice rolled?: " + r);
-            //Point point;
-            //outer.setPosition(point);
-            return piece.keyEvent(stroke);
-        }
-        return c;
-    }
 
     @Override
     public void mySetState(String s) {
@@ -65,7 +51,77 @@ public class ScatterTrait extends Decorator implements EditablePiece  {
     }
     @Override
     public Command myKeyEvent(KeyStroke keyStroke) {
-        return null;
+        Command c = null;
+        if (scatterCommand.equals(keyStroke)) {
+            GameModule mod = GameModule.getGameModule();
+
+            Random ran = GameModule.getGameModule().getRNG();
+            int r = ran.nextInt(8) + 1;
+            int xFactor = getXFactor(r);
+            int yFactor = getYFactor(r);
+            final int gridSize = 150;
+            int yValue = gridSize * yFactor;
+            int xValue = gridSize * xFactor;
+
+            GamePiece outer = Decorator.getOutermost(this);
+            MoveTracker moveTracker = new MoveTracker(outer);
+            Point position = this.getPosition();
+//            mod.getChatter().show("old position: " + position.toString());
+
+            position.translate(xValue, yValue);
+//            mod.getChatter().show("position: " + position.toString());
+            this.getMap().placeAt(outer, position);
+            Command moveCommand = moveTracker.getMoveCommand();
+
+            c = new Chatter.DisplayText(mod.getChatter(),
+                    "Scatter roll: " + r)
+                    .append(moveCommand);
+
+            c.execute();
+        }
+        return c;
+    }
+
+    private static int getYFactor(int r) {
+        int yFactor = 0;
+        switch (r){
+            case 1:
+            case 2:
+            case 3:
+                yFactor = -1;
+                break;
+            case 4:
+            case 5:
+                yFactor = 0;
+                break;
+            case 6:
+            case 7:
+            case 8:
+                yFactor = 1;
+                break;
+        }
+        return yFactor;
+    }
+
+    private static int getXFactor(int r) {
+        int xFactor = 0;
+        switch (r){
+            case 1:
+            case 4:
+            case 6:
+                xFactor = -1;
+                break;
+            case 2:
+            case 7:
+                xFactor = 0;
+                break;
+            case 3:
+            case 5:
+            case 8:
+                xFactor = 1;
+                break;
+        }
+        return xFactor;
     }
 
     public void draw(Graphics graphics, int x, int y, Component component, double zoom) {
