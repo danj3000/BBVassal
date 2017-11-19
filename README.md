@@ -5,21 +5,23 @@ See http://www.garykrockover.com/BB/ for more details!
 
 The repository contains the expanded contents of the .vmod. The vmod is not included here.
 
-## Process
-!!Ignore this talk of batch files - It's all done with ant build scripts now. (run inside intelliJ)!!
+## Build Process
+Builds are done using Ant scripts as defined in build.xml
 
---------------------
-To use the batch files:
-- you will need 7zip installed
-- the batch file assumes that the path to the 7Zip executable is in your %PATH% environment variable
+The buildall target creates the standard version, then the lowres (_LR) version
 
-To build the vmod
-- run the buildvmod.bat file
 
-To edit using the Vassal editor
+##To build a new version
+- define a new configuration in intellij by copying the last release and updating version parameter
+or
+- run buildall target passing in version parameter
+- you should get two vmods in the build directory
+
+
+##To edit using the Vassal editor
 - build the vmod
 - use vassal editor to make changes
-- run extractbuildFile.bat
+- run extractxml build target
 - commit changes
 
 **Important:** Always ensure that any changes to the vmod using the editor are extracted and saved as component files, else your changes will be lost next time the build script is run.
