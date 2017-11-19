@@ -6,6 +6,9 @@ See http://www.garykrockover.com/BB/ for more details!
 The repository contains the expanded contents of the .vmod. The vmod is not included here.
 
 ## Process
+!!Ignore this talk of batch files - It's all done with ant build scripts now. (run inside intelliJ)!!
+
+--------------------
 To use the batch files:
 - you will need 7zip installed
 - the batch file assumes that the path to the 7Zip executable is in your %PATH% environment variable
