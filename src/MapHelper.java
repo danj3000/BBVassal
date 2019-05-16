@@ -1,15 +1,15 @@
+import VASSAL.build.GameModule;
 import VASSAL.build.module.Map;
 import VASSAL.build.module.map.boardPicker.Board;
 import VASSAL.build.module.map.boardPicker.board.MapGrid;
 import VASSAL.build.module.map.boardPicker.board.ZonedGrid;
 import VASSAL.build.module.map.boardPicker.board.mapgrid.Zone;
+import VASSAL.command.Command;
 import VASSAL.counters.GamePiece;
-import VASSAL.counters.Stack;
 import com.google.common.collect.Iterables;
 
+import java.awt.*;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 public class MapHelper {
     public static GamePiece[] getPlayers(Map map) {
@@ -43,4 +43,5 @@ public class MapHelper {
         Zone pitchZone = zGrid.findZone("Pitch");
         return pitchZone.getGrid();
     }
+
 }

@@ -10,6 +10,7 @@ import VASSAL.build.module.map.boardPicker.board.MapGrid;
 import VASSAL.command.Command;
 import VASSAL.command.CommandEncoder;
 import VASSAL.counters.GamePiece;
+import vassal.Chat;
 
 import javax.swing.*;
 import java.awt.*;

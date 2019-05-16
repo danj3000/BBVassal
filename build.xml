@@ -36,7 +36,7 @@
             <file file="build/moduledata" />
             <zipfileset dir="images" prefix="images" />
             <zipfileset dir="sounds" prefix="sounds" />
-            <fileset dir="out" includes="*.class" />
+            <fileset dir="out" includes="**/*.class" />
             <file file="Kickoff_Table.html" />
         </zip>
     </target>

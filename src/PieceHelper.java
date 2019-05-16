@@ -1,5 +1,6 @@
 import VASSAL.counters.GamePiece;
 import VASSAL.counters.Stack;
+import vassal.Chat;
 
 // provides helper methods for reading properties because pieces are usually a Stack in BBVassal
 public class PieceHelper {
@@ -8,11 +9,12 @@ public class PieceHelper {
 
         if (piece instanceof Stack) {
             Stack s = (Stack) piece;
-            for (int j = 0; j < s.getPieceCount(); j++) {
+            int pieceCount = s.getPieceCount();
+            for (int j = 0; j < pieceCount; j++) {
                 GamePiece p = (s.getPieceAt(j));
                 if(isAPlayer(p)){
                     return true;
-                };
+                }
             }
         }
         else
@@ -29,7 +31,7 @@ public class PieceHelper {
                 GamePiece p = (s.getPieceAt(j));
                 if(isInTeam(p, team)){
                     return true;
-                };
+                }
             }
         }
         else
