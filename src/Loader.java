@@ -73,7 +73,12 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
                 Team team = NtbblTeamReader.loadTeam(fileContent);
                 int i = 0;
                 for (Player p : team.getPlayers()) {
-                    GamePiece piece = createPieceFromPalette(p);
+                    String side = "blue";
+                    GamePiece piece = createPieceFromPalette(p, team.getRace(), side);
+                    if (piece == null){
+                        continue;
+                    }
+
                     // add piece to map
                     MapGrid grid = MapHelper.getPitchGrid();
 
@@ -126,8 +131,8 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
         return fileContent;
     }
 
-    private GamePiece createPieceFromPalette(Player player) {
-        String position = player.getPosition();
+    private GamePiece createPieceFromPalette(Player player, String race, String side) {
+        String position = getEntryName(player, race, side);
 
         GameModule mod = GameModule.getGameModule();
         java.util.List<PieceSlot> slots = mod.getAllDescendantComponentsOf(PieceSlot.class);
@@ -141,6 +146,18 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
 
         Chat.log("ERROR: pieceSlot not found to match: " + position);
         return null;
+    }
+
+    private String getEntryName(Player player, String race, String side) {
+        //todo: simplify this fudge later (rename pieces / ntbbl names or whatever)
+        String position = player.getPosition();
+        if (position.equalsIgnoreCase("Minotaur Lord"))
+            position = "Minotaur";
+
+        if (position.startsWith(race)) // prevent 'chaos chaos warrior'
+            return String.format("%s (%s)", position, side);
+        else
+            return String.format("%s %s (%s)", race, position, side);
     }
 
     public void removeFrom(Buildable buildable) {

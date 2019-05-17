@@ -294,9 +294,11 @@ input = "\n" +
     void loadTeam() {
         Team team = NtbblTeamReader.loadTeam(input);
         assertNotNull(team);
-        assertEquals(12, team.getPlayers().size());
+        assertEquals(11, team.getPlayers().size());
         assertEquals("Beastman", team.getPlayers().get(0).getPosition());
         assertEquals("2", team.getPlayers().get(1).getNumber());
-
+        assertEquals("Chaos", team.getRace());
+        assertEquals("danj3000", team.getCoach());
+        assertEquals("Angrytown", team.getName());
     }
 }

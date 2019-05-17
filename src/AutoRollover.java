@@ -127,12 +127,12 @@ public class AutoRollover extends AbstractConfigurable implements CommandEncoder
 
     }
 
-    private void rolloverButtonPressed(String team){
+    private void rolloverButtonPressed(String side){
         GameModule mod = GameModule.getGameModule();
 
-        RolloverTeamCommand rc = new RolloverTeamCommand(team);
+        RolloverTeamCommand rc = new RolloverTeamCommand(side);
         Command c = new Chatter.DisplayText(mod.getChatter(),
-                "Automated Rollover for " + team)
+                "Automated Rollover for " + side)
                 .append(rc);
         c.execute();
 
