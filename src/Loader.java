@@ -23,11 +23,10 @@ import java.io.*;
 
 
 public class Loader extends AbstractConfigurable implements CommandEncoder,GameComponent {
-    // add supporting Command here
+    // add supporting Command here if needed
+    // public static final String COMMAND_PREFIX = "LOAD:";
 
-    public static final String COMMAND_PREFIX = "LOAD:";
-
-    private JButton loaderButton;
+    private JButton loadTeamsButton;
 
     public String[] getAttributeDescriptions() {
         return new String[0];
@@ -63,52 +62,97 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
         mod.getGameState().addGameComponent(this);
 
         // add button to toolbar
-        loaderButton = new JButton("LOAD IT NOW!!!");
+        loadTeamsButton = new JButton("Load Teams");
 
-        loaderButton.addActionListener(new ActionListener() {
+        final JPopupMenu menu = new JPopupMenu("Menu");
+        JMenuItem loadRedMenuItem = createTeamLoadMenuItem("red");
+        menu.add(loadRedMenuItem);
+
+        JMenuItem loadBlueMenuItem = createTeamLoadMenuItem("blue");
+        menu.add(loadBlueMenuItem);
+
+        loadTeamsButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                menu.show(loadTeamsButton, 0, 0);
+            }
+        } );
+        map.getToolBar().add(loadTeamsButton);
+    }
+
+    private JMenuItem createTeamLoadMenuItem(final String side) {
+        String iconFile = String.format("%s-addteam.png", side);
+        String buttonText = String.format("Load %s team", side);
+        JMenuItem loadRedMenuItem = new JMenuItem(buttonText, getIconImage(iconFile));
+        loadRedMenuItem.setEnabled(true);
+        loadRedMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // DO STUFF HERE!!!
-                String fileContent = GetTeamFileContent();
-
-                Team team = NtbblTeamReader.loadTeam(fileContent);
-                int i = 0;
-                for (Player p : team.getPlayers()) {
-                    String side = "blue";
-                    GamePiece piece = createPieceFromPalette(p, team.getRace(), side);
-                    if (piece == null){
-                        continue;
-                    }
-
-                    // add piece to map
-                    MapGrid grid = MapHelper.getPitchGrid();
-
-                    String column = "D";
-                    int yOffSet = 3;
-                    Point location;
-                    try {
-                        location = grid.getLocation(column +(i+yOffSet));
-                    } catch (MapGrid.BadCoords badCoords) {
-                        badCoords.printStackTrace();
-                        Chat.log("ERROR: bad coords :-(");
-                        return;
-                    }
-
-                    Command placeCommand = MapHelper.getPitchMap().placeAt(piece, location);
-                    placeCommand.execute();
-                    GameModule.getGameModule().sendAndLog(placeCommand);
-
-                    i++;
-                }
+                doTeamLoad(side);
             }
         });
+        return loadRedMenuItem;
+    }
 
-        map.getToolBar().add(loaderButton);
+    private ImageIcon getIconImage(String imageName) {
+        ImageIcon imageIcon;
+        Image image;
+        try {
+            image = GameModule.getGameModule().getDataArchive().getCachedImage(imageName);
+        } catch (IOException e) {
+            image = null;
+        }
+        imageIcon = new ImageIcon(image);
+        return imageIcon;
+    }
+
+    private void doTeamLoad(String side) {
+        // present file chooser dialog and load file
+        String fileContent = GetTeamFileContent();
+
+        if (fileContent.length() > 0) {
+            // load a team object
+            Team team = NtbblTeamReader.loadTeam(fileContent);
+
+            // add players to pitch
+            addTeamToPitch(team, side);
+        }
+    }
+
+    private void addTeamToPitch(Team team, String side) {
+        int i = 0;
+        for (Player p : team.getPlayers()) {
+            // red or blue
+            String column = side == "red" ? "D" : "G"; // todo: depends on side
+
+            GamePiece piece = createPieceFromPalette(p, team.getRace(), side);
+            if (piece == null){
+                continue;
+            }
+
+            // get target coordinates...
+            MapGrid grid = MapHelper.getPitchGrid();
+            int yOffSet = 1;
+            Point location;
+            try {
+                location = grid.getLocation(column +(i+yOffSet));
+            } catch (MapGrid.BadCoords badCoords) {
+                badCoords.printStackTrace();
+                Chat.log("ERROR: bad coords :-(");
+                return;
+            }
+
+            // put the player on the pitch
+            Command placeCommand = MapHelper.getPitchMap().placeAt(piece, location);
+            placeCommand.execute();
+            GameModule.getGameModule().sendAndLog(placeCommand);
+
+            i++;
+        }
     }
 
     private String GetTeamFileContent() {
         String fileContent = "";
         final JFileChooser fc = new JFileChooser();
-        int returnVal = fc.showOpenDialog(loaderButton);
+        int returnVal = fc.showOpenDialog(loadTeamsButton);
         if (returnVal == JFileChooser.APPROVE_OPTION){
             File file = fc.getSelectedFile();
             BufferedReader reader;
@@ -140,7 +184,8 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
             String name = ps.getConfigureName();
             if (name.equalsIgnoreCase(position)){
                 // clonePiece expands the traits within the piece definition
-                return PieceCloner.getInstance().clonePiece(ps.getPiece());
+                GamePiece piece = PieceCloner.getInstance().clonePiece(ps.getPiece());
+                return piece;
             }
         }
 
@@ -166,7 +211,7 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
         mod.getGameState().removeGameComponent(this);
 
         Map map = (Map)buildable;
-        map.getToolBar().remove(loaderButton);
+        map.getToolBar().remove(loadTeamsButton);
     }
 
     public Command decode(String s) {
