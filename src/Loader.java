@@ -209,6 +209,11 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
             aMap.put("Catcher", "Runner");
         }
         aMap.put("Necromantic", "Necro");
+        aMap.put("Halfling Hero", "Halfling");
+        aMap.put("Chaos Troll", "Troll");
+        aMap.put("Chaos Ogre", "Ogre");
+        aMap.put("River Troll", "Troll");
+
         // Journeymen
         aMap.put(" [J]", "");
         for (String s :

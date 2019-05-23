@@ -27,9 +27,11 @@ public class PlayerPiece {
     }
 
     public void updateProperties(int value, Player player) {
+
         PropertySheet ps = (PropertySheet) Decorator.getDecorator(gamePiece, PropertySheet.class);
-        String newState = String.format("~%s~%d~%d~%d~%d~%s~",
+        String newState = String.format("%s~%s~%d~%d~%d~%d~%s~",
                 player.getName(),
+                player.getPosition(),
                 player.getMovement(),
                 player.getStrength(),
                 player.getAgility(),

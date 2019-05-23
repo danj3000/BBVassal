@@ -35,19 +35,23 @@ public class NtbblTeamReader {
                     NodeList playerProperties = p.getElementsByTagName("TD");
                     if (playerProperties.getLength() != 16){
                         // set race
-                        if ("Race:".equalsIgnoreCase(playerProperties.item(1).getTextContent()))
+                        String key = playerProperties.item(1).getTextContent();
+                        String value = playerProperties.item(2).getTextContent().trim();
+                        if ("Race:".equalsIgnoreCase(key))
                         {
-                            team.setRace(playerProperties.item(2).getTextContent().trim());
+                            if (value.equalsIgnoreCase("elf"))
+                                value = "Pro Elf";
+                            team.setRace(value);
                         }
                         // set team name
-                        if ("Team:".equalsIgnoreCase(playerProperties.item(1).getTextContent()))
+                        if ("Team:".equalsIgnoreCase(key))
                         {
-                            team.setName(playerProperties.item(2).getTextContent().trim());
+                            team.setName(value);
                         }
                         // set team coach
-                        if ("Coach:".equalsIgnoreCase(playerProperties.item(1).getTextContent()))
+                        if ("Coach:".equalsIgnoreCase(key))
                         {
-                            team.setCoach(playerProperties.item(2).getTextContent().trim());
+                            team.setCoach(value);
                         }
                         continue;
                     }
