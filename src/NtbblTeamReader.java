@@ -54,8 +54,17 @@ public class NtbblTeamReader {
 
                     String pos = playerProperties.item(2).getTextContent();
                     Player player = new Player(pos);
-                    String num = playerProperties.item(0).getTextContent();
-                    player.setNumber(num);
+                    player.setNumber(playerProperties.item(0).getTextContent());
+                    player.setName(playerProperties.item(1).getTextContent());
+                    int MA = Integer.parseInt(playerProperties.item(3).getTextContent());
+                    player.setMovement(MA);
+                    int ST = Integer.parseInt(playerProperties.item(4).getTextContent());
+                    player.setStrength(ST);
+                    int AG = Integer.parseInt(playerProperties.item(5).getTextContent());
+                    player.setAgility(AG);
+                    int AV = Integer.parseInt(playerProperties.item(6).getTextContent());
+                    player.setArmour(AV);
+                    player.setSkills(playerProperties.item(7).getTextContent());
                     team.getPlayers().add(player);
                 }
             }

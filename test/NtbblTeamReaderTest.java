@@ -1,3 +1,4 @@
+import game.Player;
 import game.Team;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -296,9 +297,17 @@ input = "\n" +
         assertNotNull(team);
         assertEquals(11, team.getPlayers().size());
         assertEquals("Beastman", team.getPlayers().get(0).getPosition());
-        assertEquals("2", team.getPlayers().get(1).getNumber());
+        Player player = team.getPlayers().get(1);
+        assertEquals("2", player.getNumber());
         assertEquals("Chaos", team.getRace());
         assertEquals("danj3000", team.getCoach());
         assertEquals("Angrytown", team.getName());
+        assertEquals(6, player.getMovement());
+        assertEquals(3, player.getStrength());
+        assertEquals(3, player.getAgility());
+        assertEquals(8, player.getArmour());
+        assertEquals("Unnamed", player.getName());
+        assertEquals("Horns", player.getSkills());
+
     }
 }

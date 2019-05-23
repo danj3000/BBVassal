@@ -20,6 +20,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import java.util.HashMap;
 
 
 public class Loader extends AbstractConfigurable implements CommandEncoder,GameComponent {
@@ -128,6 +129,9 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
                 continue;
             }
 
+            PlayerPiece pp = new PlayerPiece(piece);
+            pp.updatePiece(p);
+
             // get target coordinates...
             MapGrid grid = MapHelper.getPitchGrid();
             int yOffSet = 1;
@@ -194,15 +198,34 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
     }
 
     private String getEntryName(Player player, String race, String side) {
-        //todo: simplify this fudge later (rename pieces / ntbbl names or whatever)
+        //todo: simplify this fudge later
         String position = player.getPosition();
-        if (position.equalsIgnoreCase("Minotaur Lord"))
-            position = "Minotaur";
+        HashMap<String, String> aMap = new HashMap<String, String>();
+        aMap.put("Minotaur Lord", "Minotaur");
+        // Norse
+        aMap.put("Norse Werewolf", "Norse Ulfwerener");
+        if (race.equalsIgnoreCase("Norse")) {
+            aMap.put("Blitzer", "Beserker"); // note spelling mistake
+            aMap.put("Catcher", "Runner");
+        }
+        aMap.put("Necromantic", "Necro");
+        // Journeymen
+        aMap.put(" [J]", "");
+        for (String s :
+                aMap.keySet()) {
+            position = position.replace(s, aMap.get(s));
+        }
 
-        if (position.startsWith(race)) // prevent 'chaos chaos warrior'
+        // non-positional formatting
+        String formattedRace = race;
+        if (race.equalsIgnoreCase("Necromantic"))
+            formattedRace = race.replace("Necromantic", "Necro");
+
+        // prevent 'chaos chaos warrior'
+        if (position.startsWith(formattedRace))
             return String.format("%s (%s)", position, side);
         else
-            return String.format("%s %s (%s)", race, position, side);
+            return String.format("%s %s (%s)", formattedRace, position, side);
     }
 
     public void removeFrom(Buildable buildable) {
