@@ -182,19 +182,30 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
     private GamePiece createPieceFromPalette(Player player, String race, String side) {
         String position = getEntryName(player, race, side);
 
+        PieceSlot pieceSlot = getPieceSlotByName(position);
+
+        if (pieceSlot == null){
+            Chat.log("ERROR: pieceSlot not found to match: " + position);
+            pieceSlot = getPieceSlotByName(String.format("Unknown Piece (%s)", side));
+        }
+
+        GamePiece piece = PieceCloner.getInstance().clonePiece(pieceSlot.getPiece());
+        return piece;
+    }
+
+    private PieceSlot getPieceSlotByName(String position) {
         GameModule mod = GameModule.getGameModule();
         java.util.List<PieceSlot> slots = mod.getAllDescendantComponentsOf(PieceSlot.class);
+        PieceSlot pieceSlot = null;
         for (PieceSlot ps : slots) {
             String name = ps.getConfigureName();
             if (name.equalsIgnoreCase(position)){
                 // clonePiece expands the traits within the piece definition
-                GamePiece piece = PieceCloner.getInstance().clonePiece(ps.getPiece());
-                return piece;
+                pieceSlot = ps;
+                break;
             }
         }
-
-        Chat.log("ERROR: pieceSlot not found to match: " + position);
-        return null;
+        return pieceSlot;
     }
 
     private String getEntryName(Player player, String race, String side) {
