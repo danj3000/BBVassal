@@ -186,7 +186,7 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
 
         if (pieceSlot == null){
             Chat.log("ERROR: pieceSlot not found to match: " + position);
-            pieceSlot = getPieceSlotByName(String.format("Unknown Piece (%s)", side));
+            pieceSlot = getPieceSlotByName(String.format("Unknown (%s)", side));
         }
 
         GamePiece piece = PieceCloner.getInstance().clonePiece(pieceSlot.getPiece());
