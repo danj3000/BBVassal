@@ -5,8 +5,10 @@ import org.w3c.dom.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.ByteArrayInputStream;
+import java.util.HashMap;
 
 public class NtbblTeamReader implements ITeamReader {
+    HashMap<String, String> aMap = new HashMap<String, String>();
 
     private String fixHtmlInput(String inputFileContent) {
         int startIndex = inputFileContent.indexOf("<TABLE");
@@ -57,6 +59,7 @@ public class NtbblTeamReader implements ITeamReader {
                             if (value.equalsIgnoreCase("elf"))
                                 value = "Pro Elf";
                             team.setRace(value);
+                            initPositionMap(value);
                         }
                         // set team name
                         if ("Team:".equalsIgnoreCase(key))
@@ -71,8 +74,12 @@ public class NtbblTeamReader implements ITeamReader {
                         continue;
                     }
 
+                    // get player position
                     String pos = playerProperties.item(2).getTextContent();
-                    Player player = new Player(pos);
+                    String position = translatePosition(pos, team.getRace());
+
+                    // create player
+                    Player player = new Player(position);
                     player.setNumber(playerProperties.item(0).getTextContent());
                     player.setName(playerProperties.item(1).getTextContent());
                     int MA = Integer.parseInt(playerProperties.item(3).getTextContent());
@@ -93,5 +100,32 @@ public class NtbblTeamReader implements ITeamReader {
         }
 
         return team;
+    }
+
+    private void initPositionMap(String race) {
+        aMap.put("Minotaur Lord", "Minotaur");
+        // Norse
+        aMap.put("Norse Werewolf", "Norse Ulfwerener");
+        aMap.put("Necromantic", "Necro");
+        aMap.put("Halfling Hero", "Halfling");
+        aMap.put("Chaos Troll", "Troll");
+        aMap.put("Chaos Ogre", "Ogre");
+        aMap.put("River Troll", "Troll");
+
+        // Journeymen
+        aMap.put(" [J]", "");
+        if (race.equalsIgnoreCase("Norse")) {
+            aMap.put("Blitzer", "Beserker"); // note spelling mistake
+            aMap.put("Catcher", "Runner");
+        }
+    }
+
+    private String translatePosition(String pos, String race) {
+        String position = pos;
+        for (String s :
+                aMap.keySet()) {
+            position = position.replace(s, aMap.get(s));
+        }
+        return position;
     }
 }

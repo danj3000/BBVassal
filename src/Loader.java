@@ -212,26 +212,6 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
     private String getEntryName(Player player, String race, String side) {
         //todo: simplify this fudge later
         String position = player.getPosition();
-        HashMap<String, String> aMap = new HashMap<String, String>();
-        aMap.put("Minotaur Lord", "Minotaur");
-        // Norse
-        aMap.put("Norse Werewolf", "Norse Ulfwerener");
-        if (race.equalsIgnoreCase("Norse")) {
-            aMap.put("Blitzer", "Beserker"); // note spelling mistake
-            aMap.put("Catcher", "Runner");
-        }
-        aMap.put("Necromantic", "Necro");
-        aMap.put("Halfling Hero", "Halfling");
-        aMap.put("Chaos Troll", "Troll");
-        aMap.put("Chaos Ogre", "Ogre");
-        aMap.put("River Troll", "Troll");
-
-        // Journeymen
-        aMap.put(" [J]", "");
-        for (String s :
-                aMap.keySet()) {
-            position = position.replace(s, aMap.get(s));
-        }
 
         // non-positional formatting
         String formattedRace = race;
