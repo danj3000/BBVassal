@@ -6,8 +6,23 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.ByteArrayInputStream;
 
-public class NtbblTeamReader {
-    static Team loadTeam(String inputFileContent) {
+public class NtbblTeamReader implements ITeamReader {
+
+    private String fixHtmlInput(String inputFileContent) {
+        int startIndex = inputFileContent.indexOf("<TABLE");
+        int endIndex = inputFileContent.indexOf("</TABLE>") + 8;
+        String teamTableString = inputFileContent.substring(startIndex, endIndex);
+        // remove unquoted attributes (html)
+        teamTableString = teamTableString.replace("BORDER=1", "");
+        teamTableString = teamTableString.replace("ALIGN=CENTER", "");
+        teamTableString = teamTableString.replace("ALIGN=RIGHT", "");
+        teamTableString = teamTableString.replace("COLSPAN=5", "");
+        teamTableString = teamTableString.replace("COLSPAN=2", "");
+        teamTableString = teamTableString.replace("&nbsp", "");
+        return teamTableString;
+    }
+
+    public Team loadTeam(String inputFileContent) {
         Team team = new Team();
 
         String teamTableString = fixHtmlInput(inputFileContent);
@@ -78,19 +93,5 @@ public class NtbblTeamReader {
         }
 
         return team;
-    }
-
-    private static String fixHtmlInput(String inputFileContent) {
-        int startIndex = inputFileContent.indexOf("<TABLE");
-        int endIndex = inputFileContent.indexOf("</TABLE>") + 8;
-        String teamTableString = inputFileContent.substring(startIndex, endIndex);
-        // remove unquoted attributes (html)
-        teamTableString = teamTableString.replace("BORDER=1", "");
-        teamTableString = teamTableString.replace("ALIGN=CENTER", "");
-        teamTableString = teamTableString.replace("ALIGN=RIGHT", "");
-        teamTableString = teamTableString.replace("COLSPAN=5", "");
-        teamTableString = teamTableString.replace("COLSPAN=2", "");
-        teamTableString = teamTableString.replace("&nbsp", "");
-        return teamTableString;
     }
 }

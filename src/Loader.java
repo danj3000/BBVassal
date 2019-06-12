@@ -111,7 +111,7 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
 
         if (fileContent.length() > 0) {
             // load a team object
-            Team team = NtbblTeamReader.loadTeam(fileContent);
+            Team team = new NtbblTeamReader().loadTeam(fileContent);
 
             // add players to pitch
             addTeamToPitch(team, side);
@@ -145,7 +145,8 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
             }
 
             // put the player on the pitch
-            Command placeCommand = MapHelper.getPitchMap().placeAt(piece, location);
+//            Command placeCommand = MapHelper.getPitchMap().placeAt(piece, location);
+            Command placeCommand = MapHelper.getPitchMap().placeOrMerge(piece, location);
             placeCommand.execute();
             GameModule.getGameModule().sendAndLog(placeCommand);
 

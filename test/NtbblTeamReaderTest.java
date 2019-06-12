@@ -293,7 +293,7 @@ input = "\n" +
 
     @Test
     void loadTeam() {
-        Team team = NtbblTeamReader.loadTeam(input);
+        Team team = new NtbblTeamReader().loadTeam(input);
         assertNotNull(team);
         assertEquals(11, team.getPlayers().size());
         assertEquals("Beastman", team.getPlayers().get(0).getPosition());

@@ -13,9 +13,8 @@ import java.awt.event.KeyEvent;
 import java.util.Random;
 
 /**
- * Created by Mic on 09/08/2017.
- *
- * use this class as a template to make useful ones.
+ * This adds scatter behaviour - e.g. for the ball
+ * Menu item gets added (probably) because of the key-stroke binding...(tbc)
  */
 public class ScatterTrait extends Decorator implements EditablePiece  {
     public static final String ID = "ScatterTrait";
@@ -125,6 +124,7 @@ public class ScatterTrait extends Decorator implements EditablePiece  {
     }
 
     public void draw(Graphics graphics, int x, int y, Component component, double zoom) {
+        // this doesn't affect the draw behaviour of the piece (pass to next layer)
         getInner().draw(graphics, x, y, component, zoom);
     }
 
