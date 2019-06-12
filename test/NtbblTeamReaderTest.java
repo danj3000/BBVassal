@@ -58,7 +58,7 @@ input = "\n" +
         "                <TD>3</TD>\n" +
         "                <TD>8</TD>\n" +
         "                <TD>Horns</TD>\n" +
-        "                <TD></TD>\n" +
+        "                <TD>MNG</TD>\n" +
         "                <TD>0</TD>\n" +
         "                <TD>0</TD>\n" +
         "                <TD>0</TD>\n" +
@@ -202,7 +202,7 @@ input = "\n" +
         "                <TD>3</TD>\n" +
         "                <TD>9</TD>\n" +
         "                <TD></TD>\n" +
-        "                <TD></TD>\n" +
+        "                <TD>MNG</TD>\n" +
         "                <TD>0</TD>\n" +
         "                <TD>0</TD>\n" +
         "                <TD>0</TD>\n" +
@@ -308,6 +308,9 @@ input = "\n" +
         assertEquals(8, player.getArmour());
         assertEquals("Unnamed", player.getName());
         assertEquals("Horns", player.getSkills());
-
+        assertTrue(player.getMissNextGame());
+        assertFalse(team.getPlayers().get(0).getMissNextGame());
+        assertEquals("Minotaur", team.getPlayers().get(10).getPosition());
+        assertEquals("Minotaur Lord", team.getPlayers().get(10).getDisplayPosition());
     }
 }

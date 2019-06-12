@@ -31,7 +31,7 @@ public class PlayerPiece {
         PropertySheet ps = (PropertySheet) Decorator.getDecorator(gamePiece, PropertySheet.class);
         String newState = String.format("%s~%s~%d~%d~%d~%d~%s~",
                 player.getName(),
-                player.getPosition(),
+                player.getDisplayPosition(),
                 player.getMovement(),
                 player.getStrength(),
                 player.getAgility(),
@@ -40,7 +40,7 @@ public class PlayerPiece {
         ps.mySetState(newState);
     }
 
-    public void updatePiece(Player p) {
+    public void updatePieceProperties(Player p) {
         updateJerseyNumber(p.getNumber());
         updateProperties(6, p);
     }

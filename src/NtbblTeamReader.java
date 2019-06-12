@@ -39,6 +39,43 @@ public class NtbblTeamReader implements ITeamReader {
             Element docElement = doc.getDocumentElement();
             NodeList rows = docElement.getChildNodes();
 
+            // read team details - need race for position mapping
+            for (int i = 0; i < rows.getLength(); i++) {
+                Node rosterRow = rows.item(i);
+                if (rosterRow.getNodeType() == Node.ELEMENT_NODE) {
+                    NamedNodeMap attributes = rosterRow.getAttributes();
+                    // skip header row
+                    if (attributes.getNamedItem("BGCOLOR") != null) {
+                        continue;
+                    }
+
+                    Element p = (Element) rosterRow;
+                    NodeList playerProperties = p.getElementsByTagName("TD");
+                    if (playerProperties.getLength() == 16) {
+                        // a player row
+                        continue;
+                    }
+
+                    // set race
+                    String key = playerProperties.item(1).getTextContent();
+                    String value = playerProperties.item(2).getTextContent().trim();
+                    if ("Race:".equalsIgnoreCase(key)) {
+                        if (value.equalsIgnoreCase("elf"))
+                            value = "Pro Elf";
+                        team.setRace(value);
+                        initPositionMap(value);
+                    }
+                    // set team name
+                    if ("Team:".equalsIgnoreCase(key)) {
+                        team.setName(value);
+                    }
+                    // set team coach
+                    if ("Coach:".equalsIgnoreCase(key)) {
+                        team.setCoach(value);
+                    }
+                }
+            }
+
             // skip the first row
             for (int i = 0; i < rows.getLength(); i++) {
                 Node playerRow = rows.item(i);
@@ -51,26 +88,7 @@ public class NtbblTeamReader implements ITeamReader {
                     Element p = (Element) playerRow;
                     NodeList playerProperties = p.getElementsByTagName("TD");
                     if (playerProperties.getLength() != 16){
-                        // set race
-                        String key = playerProperties.item(1).getTextContent();
-                        String value = playerProperties.item(2).getTextContent().trim();
-                        if ("Race:".equalsIgnoreCase(key))
-                        {
-                            if (value.equalsIgnoreCase("elf"))
-                                value = "Pro Elf";
-                            team.setRace(value);
-                            initPositionMap(value);
-                        }
-                        // set team name
-                        if ("Team:".equalsIgnoreCase(key))
-                        {
-                            team.setName(value);
-                        }
-                        // set team coach
-                        if ("Coach:".equalsIgnoreCase(key))
-                        {
-                            team.setCoach(value);
-                        }
+                        // NOT A PLAYER ROW
                         continue;
                     }
 
@@ -80,6 +98,7 @@ public class NtbblTeamReader implements ITeamReader {
 
                     // create player
                     Player player = new Player(position);
+                    player.setDisplayPosition(pos);
                     player.setNumber(playerProperties.item(0).getTextContent());
                     player.setName(playerProperties.item(1).getTextContent());
                     int MA = Integer.parseInt(playerProperties.item(3).getTextContent());
@@ -91,6 +110,7 @@ public class NtbblTeamReader implements ITeamReader {
                     int AV = Integer.parseInt(playerProperties.item(6).getTextContent());
                     player.setArmour(AV);
                     player.setSkills(playerProperties.item(7).getTextContent());
+                    player.setMissNextGame(playerProperties.item(8).getTextContent().contains("MNG"));
                     team.getPlayers().add(player);
                 }
             }

@@ -9,6 +9,8 @@ public class Player {
     private int agility;
     private int armour;
     private String skills;
+    private boolean missNextGame;
+    private String displayPosition;
 
     public Player(String position) {
         this.position = position;
@@ -72,5 +74,21 @@ public class Player {
 
     public void setSkills(String skills) {
         this.skills = skills;
+    }
+
+    public boolean getMissNextGame() {
+        return missNextGame;
+    }
+
+    public void setMissNextGame(boolean value) {
+        missNextGame = value;
+    }
+
+    public String getDisplayPosition() {
+        return displayPosition;
+    }
+
+    public void setDisplayPosition(String displayPosition) {
+        this.displayPosition = displayPosition;
     }
 }

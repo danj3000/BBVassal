@@ -1,7 +1,8 @@
 import VASSAL.build.AbstractConfigurable;
 import VASSAL.build.Buildable;
 import VASSAL.build.GameModule;
-import VASSAL.build.module.*;
+import VASSAL.build.module.GameComponent;
+import VASSAL.build.module.Map;
 import VASSAL.build.module.documentation.HelpFile;
 import VASSAL.build.module.map.boardPicker.board.MapGrid;
 import VASSAL.build.widget.PieceSlot;
@@ -9,18 +10,15 @@ import VASSAL.command.Command;
 import VASSAL.command.CommandEncoder;
 import VASSAL.counters.GamePiece;
 import VASSAL.counters.PieceCloner;
-
 import game.Player;
 import game.Team;
 import vassal.Chat;
-
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.util.HashMap;
 
 
 public class Loader extends AbstractConfigurable implements CommandEncoder,GameComponent {
@@ -130,26 +128,30 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
             }
 
             PlayerPiece pp = new PlayerPiece(piece);
-            pp.updatePiece(p);
+            pp.updatePieceProperties(p);
 
-            // get target coordinates...
-            MapGrid grid = MapHelper.getPitchGrid();
-            int yOffSet = 1;
-            Point location;
-            try {
-                location = grid.getLocation(column +(i+yOffSet));
-            } catch (MapGrid.BadCoords badCoords) {
-                badCoords.printStackTrace();
-                Chat.log("ERROR: bad coords :-(");
-                return;
+            if(p.getMissNextGame()) {
+                Chat.log(String.format("Player %s MNG", p.getNumber()));
             }
+            else {
+                // get target coordinates...
+                MapGrid grid = MapHelper.getPitchGrid();
+                int yOffSet = 1;
+                Point location;
+                try {
+                    location = grid.getLocation(column + (i + yOffSet));
+                } catch (MapGrid.BadCoords badCoords) {
+                    badCoords.printStackTrace();
+                    Chat.log("ERROR: bad coords :-(");
+                    return;
+                }
 
-            // put the player on the pitch
-//            Command placeCommand = MapHelper.getPitchMap().placeAt(piece, location);
-            Command placeCommand = MapHelper.getPitchMap().placeOrMerge(piece, location);
-            placeCommand.execute();
-            GameModule.getGameModule().sendAndLog(placeCommand);
-
+                // put the player on the pitch
+//              Command placeCommand = MapHelper.getPitchMap().placeAt(piece, location); // why placeat doesn't work??
+                Command placeCommand = MapHelper.getPitchMap().placeOrMerge(piece, location);
+                placeCommand.execute();
+                GameModule.getGameModule().sendAndLog(placeCommand);
+            }
             i++;
         }
     }
@@ -210,7 +212,6 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
     }
 
     private String getEntryName(Player player, String race, String side) {
-        //todo: simplify this fudge later
         String position = player.getPosition();
 
         // non-positional formatting
