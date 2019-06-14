@@ -1,6 +1,7 @@
 import VASSAL.build.AbstractConfigurable;
 import VASSAL.build.Buildable;
 import VASSAL.build.GameModule;
+import VASSAL.build.module.Chatter;
 import VASSAL.build.module.GameComponent;
 import VASSAL.build.module.Map;
 import VASSAL.build.module.documentation.HelpFile;
@@ -118,6 +119,8 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
 
     private void addTeamToPitch(Team team, String side) {
         int i = 0;
+        Command c = new Chatter.DisplayText(GameModule.getGameModule().getChatter(),
+                "Creating Players for " + team.getName());
         for (Player p : team.getPlayers()) {
             // red or blue
             String column = side == "red" ? "D" : "G"; // todo: depends on side
@@ -149,11 +152,12 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
                 // put the player on the pitch
 //              Command placeCommand = MapHelper.getPitchMap().placeAt(piece, location); // why placeat doesn't work??
                 Command placeCommand = MapHelper.getPitchMap().placeOrMerge(piece, location);
-                placeCommand.execute();
-                GameModule.getGameModule().sendAndLog(placeCommand);
+                c.append(placeCommand);
             }
             i++;
         }
+        c.execute();
+        GameModule.getGameModule().sendAndLog(c);
     }
 
     private String GetTeamFileContent() {
