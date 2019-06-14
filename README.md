@@ -1,7 +1,9 @@
 # BBVassal
-This is the unofficial vassal module for Blood Bowl.
+This is a fork of the unofficial vassal module for Blood Bowl.
 
 See http://www.garykrockover.com/BB/ for more details!
+
+Since v1.9.0 there have been additional features added to support NTBBL Pbem use. See http://www.plasmoids.dk/pbem/
 
 The repository contains the expanded contents of the .vmod. The vmod is not included here.
 
