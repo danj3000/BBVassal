@@ -9,7 +9,9 @@ import VASSAL.build.module.map.boardPicker.board.MapGrid;
 import VASSAL.build.widget.PieceSlot;
 import VASSAL.command.Command;
 import VASSAL.command.CommandEncoder;
+import VASSAL.counters.Decorator;
 import VASSAL.counters.GamePiece;
+import VASSAL.counters.Labeler;
 import VASSAL.counters.PieceCloner;
 import game.Player;
 import game.Team;
@@ -112,8 +114,28 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
             // load a team object
             Team team = new NtbblTeamReader().loadTeam(fileContent);
 
+            nameEndZone(team, side);
+
             // add players to pitch
             addTeamToPitch(team, side);
+        }
+    }
+
+    private void nameEndZone(Team team, String side) {
+        String endZoneLabelName = "Endzone_Label_" + side;
+        // get endzone label stack
+        Map pitchMap = MapHelper.getPitchMap();
+        GamePiece[] allPieces = pitchMap.getAllPieces();
+        for (GamePiece piece :
+                allPieces) {
+            if(!PieceHelper.isPlayer(piece)){
+                // startswith here also works for sevens pitch
+                if (piece.getName().toLowerCase().startsWith(endZoneLabelName.toLowerCase())) {
+                    Chat.log(piece.getName());
+                    Labeler label = (Labeler) Decorator.getDecorator(piece, Labeler.class);
+                    label.setLabel(team.getName());
+                }
+            }
         }
     }
 
