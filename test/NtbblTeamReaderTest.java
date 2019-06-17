@@ -253,7 +253,7 @@ input = "\n" +
         "                <TD ALIGN=RIGHT BGCOLOR='SILVER'>Team Value:</TD>\n" +
         "                <TD COLSPAN=5>99</TD>\n" +
         "                <TD ALIGN=RIGHT BGCOLOR='SILVER' COLSPAN=5>ASSISTANT COACHES:</TD>\n" +
-        "                <TD>0</TD>\n" +
+        "                <TD>2</TD>\n" +
         "                <TD COLSPAN=2 BGCOLOR='SILVER'> x 10 kgp =</TD>\n" +
         "                <TD>0 kgp&nbsp</TD>\n" +
         "        </TR>\n" +
@@ -262,7 +262,7 @@ input = "\n" +
         "                <TD ALIGN=RIGHT BGCOLOR='SILVER'>Bank:</TD>\n" +
         "                <TD COLSPAN=5>&nbsp</TD>\n" +
         "                <TD ALIGN=RIGHT BGCOLOR='SILVER' COLSPAN=5>CHEERLEADERS:</TD>\n" +
-        "                <TD>0</TD>\n" +
+        "                <TD>3</TD>\n" +
         "                <TD COLSPAN=2 BGCOLOR='SILVER'> x 10 kgp =</TD>\n" +
         "                <TD>0 Kgp</TD>\n" +
         "        </TR>\n" +
@@ -312,5 +312,7 @@ input = "\n" +
         assertFalse(team.getPlayers().get(0).getMissNextGame());
         assertEquals("Minotaur", team.getPlayers().get(10).getPosition());
         assertEquals("Minotaur Lord", team.getPlayers().get(10).getDisplayPosition());
+        assertEquals(3, team.getCheerleaders());
+        assertEquals(2, team.getAssistantCoaches());
     }
 }

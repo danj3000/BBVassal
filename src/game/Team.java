@@ -9,6 +9,8 @@ public class Team {
     private String name;
     private String coach;
     private String rerolls;
+    private int cheerleaders = 0;
+    private int assistantCoaches;
 
     public ArrayList<Player> getPlayers() {
         return players;
@@ -48,5 +50,21 @@ public class Team {
 
     public void setRerolls(String rerolls) {
         this.rerolls = rerolls;
+    }
+
+    public int getCheerleaders() {
+        return cheerleaders;
+    }
+
+    public void setCheerleaders(int cheerleaders) {
+        this.cheerleaders = cheerleaders;
+    }
+
+    public void setAssistantCoaches(int value) {
+        this.assistantCoaches = value;
+    }
+
+    public int getAssistantCoaches() {
+        return assistantCoaches;
     }
 }

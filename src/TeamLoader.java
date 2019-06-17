@@ -115,7 +115,9 @@ public class TeamLoader extends AbstractConfigurable implements CommandEncoder,G
             // name the end zone, add players to the pitch and set up Re-rolls
             Command c = MapHelper.nameEndZone(side, team.getName())
                     .append(addTeamToPitch(team, side))
-                    .append(MapHelper.moveRerollCounter(side, team.getRerolls()));
+                    .append(MapHelper.moveRerollCounter(side, team.getRerolls()))
+                    .append(MapHelper.setCheerleaders(side, team.getCheerleaders()))
+                    .append(MapHelper.setAssistantCoaches(side, team.getAssistantCoaches()));
 
             // Add to the log for playback
             GameModule.getGameModule().sendAndLog(c);

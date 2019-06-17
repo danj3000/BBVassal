@@ -75,6 +75,12 @@ public class NtbblTeamReader implements ITeamReader {
                     if ("Coach:".equalsIgnoreCase(key)) {
                         team.setCoach(value);
                     }
+                    if ("Bank:".equalsIgnoreCase(key)) {
+                        team.setCheerleaders(Integer.parseInt(playerProperties.item(4).getTextContent()));
+                    }
+                    if("Team Value:".equalsIgnoreCase(key)){
+                        team.setAssistantCoaches(Integer.parseInt(playerProperties.item(4).getTextContent()));
+                    }
                 }
             }
 

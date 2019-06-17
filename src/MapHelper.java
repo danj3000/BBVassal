@@ -11,6 +11,7 @@ import VASSAL.command.ChangePiece;
 import VASSAL.command.Command;
 import VASSAL.command.MoveTracker;
 import VASSAL.counters.Decorator;
+import VASSAL.counters.Embellishment;
 import VASSAL.counters.GamePiece;
 import VASSAL.counters.Labeler;
 import com.google.common.collect.Iterables;
@@ -146,5 +147,28 @@ public class MapHelper {
             Chat.log("ERROR: bad coords :" + target);
             return null;
         }
+    }
+
+    public static Command setCheerleaders(String side, int newValue) {
+        Command c = Chat.displayText(String.format("Setting %s Cheerleaders: %d", side, newValue));
+        String name = String.format("%s Cheerleaders", side);
+        return c.append(setLayeredPieceValue(name, newValue));
+    }
+
+    public static Command setAssistantCoaches(String side, int newValue) {
+        Command c = Chat.displayText(String.format("Setting %s Assistant Coach: %d", side, newValue));
+        String name = String.format("%s Assistant Coach", side);
+        return c.append(setLayeredPieceValue(name, newValue));
+    }
+
+    private static Command setLayeredPieceValue(String name, int newValue) {
+        GamePiece piece = getNonPlayerPiece(name);
+        String oldState = piece.getState();
+        Embellishment valueLayer = (Embellishment) Decorator.getDecorator(piece, Embellishment.class);
+        valueLayer.setValue(newValue);
+        String newState = piece.getState();
+        // no need to execute command as local changes already made
+
+        return new ChangePiece(piece.getId(), oldState, newState);
     }
 }
