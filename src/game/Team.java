@@ -8,6 +8,7 @@ public class Team {
     private String race;
     private String name;
     private String coach;
+    private String rerolls;
 
     public ArrayList<Player> getPlayers() {
         return players;
@@ -39,5 +40,13 @@ public class Team {
 
     public String getCoach() {
         return coach;
+    }
+
+    public String getRerolls() {
+        return rerolls;
+    }
+
+    public void setRerolls(String rerolls) {
+        this.rerolls = rerolls;
     }
 }

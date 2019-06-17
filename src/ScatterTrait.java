@@ -63,15 +63,14 @@ public class ScatterTrait extends Decorator implements EditablePiece  {
             int xValue = gridSize * xFactor;
 
             GamePiece outer = Decorator.getOutermost(this);
+
             MoveTracker moveTracker = new MoveTracker(outer);
             Point position = this.getPosition();
 //            mod.getChatter().show("old position: " + position.toString());
-
             position.translate(xValue, yValue);
 //            mod.getChatter().show("position: " + position.toString());
             this.getMap().placeAt(outer, position);
             Command moveCommand = moveTracker.getMoveCommand();
-
             c = new Chatter.DisplayText(mod.getChatter(),
                     "Scatter roll: " + r)
                     .append(moveCommand);

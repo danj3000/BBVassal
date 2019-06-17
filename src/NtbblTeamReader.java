@@ -68,6 +68,8 @@ public class NtbblTeamReader implements ITeamReader {
                     // set team name
                     if ("Team:".equalsIgnoreCase(key)) {
                         team.setName(value);
+                        // set re-rolls
+                        team.setRerolls(playerProperties.item(4).getTextContent());
                     }
                     // set team coach
                     if ("Coach:".equalsIgnoreCase(key)) {

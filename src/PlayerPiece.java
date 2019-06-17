@@ -40,6 +40,10 @@ public class PlayerPiece {
         ps.mySetState(newState);
     }
 
+    /**
+     * Updates the piece stats, jersey number, name etc
+     * @param p the Player object with stats etc. to apply to the GamePiece
+     */
     public void updatePieceProperties(Player p) {
         updateJerseyNumber(p.getNumber());
         updateProperties(6, p);

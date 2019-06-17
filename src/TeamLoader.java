@@ -5,16 +5,14 @@ import VASSAL.build.module.Chatter;
 import VASSAL.build.module.GameComponent;
 import VASSAL.build.module.Map;
 import VASSAL.build.module.documentation.HelpFile;
-import VASSAL.build.module.map.boardPicker.board.MapGrid;
 import VASSAL.build.widget.PieceSlot;
 import VASSAL.command.Command;
 import VASSAL.command.CommandEncoder;
-import VASSAL.counters.Decorator;
 import VASSAL.counters.GamePiece;
-import VASSAL.counters.Labeler;
 import VASSAL.counters.PieceCloner;
 import game.Player;
 import game.Team;
+import vassal.BBPalette;
 import vassal.Chat;
 
 import javax.swing.*;
@@ -24,7 +22,7 @@ import java.awt.event.ActionListener;
 import java.io.*;
 
 
-public class Loader extends AbstractConfigurable implements CommandEncoder,GameComponent {
+public class TeamLoader extends AbstractConfigurable implements CommandEncoder,GameComponent {
     // add supporting Command here if needed
     // public static final String COMMAND_PREFIX = "LOAD:";
 
@@ -67,10 +65,10 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
         loadTeamsButton = new JButton("Load Teams");
 
         final JPopupMenu menu = new JPopupMenu("Menu");
-        JMenuItem loadRedMenuItem = createTeamLoadMenuItem("red");
+        JMenuItem loadRedMenuItem = createTeamLoadMenuItem("Red");
         menu.add(loadRedMenuItem);
 
-        JMenuItem loadBlueMenuItem = createTeamLoadMenuItem("blue");
+        JMenuItem loadBlueMenuItem = createTeamLoadMenuItem("Blue");
         menu.add(loadBlueMenuItem);
 
         loadTeamsButton.addActionListener(new ActionListener() {
@@ -82,8 +80,8 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
     }
 
     private JMenuItem createTeamLoadMenuItem(final String side) {
-        String iconFile = String.format("%s-addteam.png", side);
-        String buttonText = String.format("Load %s team", side);
+        String iconFile = String.format("%s-addteam.png", side.toLowerCase());
+        String buttonText = String.format("Load %s team", side.toLowerCase());
         JMenuItem loadRedMenuItem = new JMenuItem(buttonText, getIconImage(iconFile));
         loadRedMenuItem.setEnabled(true);
         loadRedMenuItem.addActionListener(new ActionListener() {
@@ -114,74 +112,49 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
             // load a team object
             Team team = new NtbblTeamReader().loadTeam(fileContent);
 
-            nameEndZone(team, side);
+            // name the end zone, add players to the pitch and set up Re-rolls
+            Command c = MapHelper.nameEndZone(side, team.getName())
+                    .append(addTeamToPitch(team, side))
+                    .append(MapHelper.moveRerollCounter(side, team.getRerolls()));
 
-            // add players to pitch
-            addTeamToPitch(team, side);
+            // Add to the log for playback
+            GameModule.getGameModule().sendAndLog(c);
         }
     }
 
-    private void nameEndZone(Team team, String side) {
-        String endZoneLabelName = "Endzone_Label_" + side;
-        // get endzone label stack
-        Map pitchMap = MapHelper.getPitchMap();
-        GamePiece[] allPieces = pitchMap.getAllPieces();
-        for (GamePiece piece :
-                allPieces) {
-            if(!PieceHelper.isPlayer(piece)){
-                // startswith here also works for sevens pitch
-                if (piece.getName().toLowerCase().startsWith(endZoneLabelName.toLowerCase())) {
-                    Chat.log(piece.getName());
-                    Labeler label = (Labeler) Decorator.getDecorator(piece, Labeler.class);
-                    label.setLabel(team.getName());
-                }
-            }
-        }
-    }
+    private Command addTeamToPitch(Team team, String side) {
 
-    private void addTeamToPitch(Team team, String side) {
-        int i = 0;
+        String column = side.equalsIgnoreCase("red") ? "I" : "P";
         Command c = new Chatter.DisplayText(GameModule.getGameModule().getChatter(),
                 "Creating Players for " + team.getName());
+
+        int row = 1; // vertical offset for placing on pitch
         for (Player p : team.getPlayers()) {
-            // red or blue
-            String column = side == "red" ? "D" : "G"; // todo: depends on side
+            GamePiece piece = BBPalette.createPieceFromPalette(p, team.getRace(), side);
+            if (piece != null) {
+                PlayerPiece pp = new PlayerPiece(piece);
+                pp.updatePieceProperties(p); // set stats, jersey etc
 
-            GamePiece piece = createPieceFromPalette(p, team.getRace(), side);
-            if (piece == null){
-                continue;
-            }
+                if (p.getMissNextGame()) {
+                    c.append(new Chatter.DisplayText(GameModule.getGameModule().getChatter(),
+                            String.format("Player %s MNG", p.getNumber())
+                    ));
+                } else {
+                    // get target coordinates...
+                    String target = column + (row);
 
-            PlayerPiece pp = new PlayerPiece(piece);
-            pp.updatePieceProperties(p);
-
-            if(p.getMissNextGame()) {
-                Chat.log(String.format("Player %s MNG", p.getNumber()));
-            }
-            else {
-                // get target coordinates...
-                MapGrid grid = MapHelper.getPitchGrid();
-                int yOffSet = 1;
-                Point location;
-                try {
-                    location = grid.getLocation(column + (i + yOffSet));
-                } catch (MapGrid.BadCoords badCoords) {
-                    badCoords.printStackTrace();
-                    Chat.log("ERROR: bad coords :-(");
-                    return;
+                    c.append(MapHelper.addPlayerToPitch(piece, target));
                 }
-
-                // put the player on the pitch
-//              Command placeCommand = MapHelper.getPitchMap().placeAt(piece, location); // why placeat doesn't work??
-                Command placeCommand = MapHelper.getPitchMap().placeOrMerge(piece, location);
-                c.append(placeCommand);
+                row++;
             }
-            i++;
         }
+
+        // do all this locally then return command to be logged and sent
         c.execute();
-        GameModule.getGameModule().sendAndLog(c);
+        return c;
     }
 
+    //todo:
     private String GetTeamFileContent() {
         String fileContent = "";
         final JFileChooser fc = new JFileChooser();
@@ -208,49 +181,6 @@ public class Loader extends AbstractConfigurable implements CommandEncoder,GameC
         return fileContent;
     }
 
-    private GamePiece createPieceFromPalette(Player player, String race, String side) {
-        String position = getEntryName(player, race, side);
-
-        PieceSlot pieceSlot = getPieceSlotByName(position);
-
-        if (pieceSlot == null){
-            Chat.log("ERROR: pieceSlot not found to match: " + position);
-            pieceSlot = getPieceSlotByName(String.format("Unknown (%s)", side));
-        }
-
-        GamePiece piece = PieceCloner.getInstance().clonePiece(pieceSlot.getPiece());
-        return piece;
-    }
-
-    private PieceSlot getPieceSlotByName(String position) {
-        GameModule mod = GameModule.getGameModule();
-        java.util.List<PieceSlot> slots = mod.getAllDescendantComponentsOf(PieceSlot.class);
-        PieceSlot pieceSlot = null;
-        for (PieceSlot ps : slots) {
-            String name = ps.getConfigureName();
-            if (name.equalsIgnoreCase(position)){
-                // clonePiece expands the traits within the piece definition
-                pieceSlot = ps;
-                break;
-            }
-        }
-        return pieceSlot;
-    }
-
-    private String getEntryName(Player player, String race, String side) {
-        String position = player.getPosition();
-
-        // non-positional formatting
-        String formattedRace = race;
-        if (race.equalsIgnoreCase("Necromantic"))
-            formattedRace = race.replace("Necromantic", "Necro");
-
-        // prevent 'chaos chaos warrior'
-        if (position.startsWith(formattedRace))
-            return String.format("%s (%s)", position, side);
-        else
-            return String.format("%s %s (%s)", formattedRace, position, side);
-    }
 
     public void removeFrom(Buildable buildable) {
         GameModule mod = GameModule.getGameModule();
