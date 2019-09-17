@@ -64,7 +64,15 @@
         <antcall target="setversion">
             <param name="ver" value="${ver}" />
         </antcall>
+        <antcall target="make_lowres" />
 
+        <echo message="building lowres ${ver}" />
+        <antcall target="zipmod">
+            <param name="ver" value="${ver}" />
+        </antcall>
+    </target>
+
+    <target name="make_lowres">
         <replace file="build/buildFile" token="_50" value="_16" />
         <replace file="build/buildFile" >
             <replacetoken><![CDATA[<VASSAL.i18n.Language/>]]></replacetoken>
@@ -72,7 +80,24 @@
     <VASSAL.build.module.ToolbarMenu description="DiceButton" hotkey="" icon="1d66_16.png" menuItems="1d6,2d6,1d8,Kick/CAS,d?" text="Dice" tooltip="Display Dice Options"/>
     <VASSAL.i18n.Language/>]]></replacevalue>
         </replace>
-        <echo message="building lowres ${ver}" />
+    </target>
+
+    <target name="build_ntbbl">
+        <property name="ver" value="${version}_NTBBL" />
+        <antcall target="clean" />
+        <antcall target="copyxml" />
+
+        <antcall target="setversion">
+            <param name="ver" value="${ver}" />
+        </antcall>
+
+        <antcall target="make_lowres" />
+
+        <replace file="build/buildFile" >
+            <replacetoken><![CDATA[</VASSAL.build.module.Map>]]></replacetoken>
+            <replacevalue><![CDATA[<TeamLoader/></VASSAL.build.module.Map>]]></replacevalue>
+        </replace>
+        <echo message="building NTBBL ${ver}" />
         <antcall target="zipmod">
             <param name="ver" value="${ver}" />
         </antcall>
@@ -81,5 +106,6 @@
     <target name="buildall" >
         <antcall target="build_standard" />
         <antcall target="build_lowres" />
+        <antcall target="build_ntbbl" />
     </target>
 </project>

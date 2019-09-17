@@ -1310,7 +1310,6 @@
         <VASSAL.build.module.MultiActionButton description="Haka Multi-Button" hotkey="" icon="separate_16.png" menuItems="Haka Time,Clear Status,Clear Moves" text="Reset Teams" tooltip="Reset Teams"/>
         <VASSAL.build.module.map.MassKeyCommand buttonHotkey="" buttonText="Clear Status" deckCount="-1" filter="" hotkey="69,130" icon="" name="Clear Status" reportFormat="" reportSingle="false" singleMap="true" tooltip="Clear Status"/>
         <VASSAL.build.module.map.MassKeyCommand buttonHotkey="" buttonText="Clear Actions" deckCount="-1" filter="" hotkey="67,130" icon="" name="Clear Actions" reportFormat="" reportSingle="false" singleMap="true" tooltip="Clear Actions"/>
-        <TeamLoader/>
     </VASSAL.build.module.Map>
     <VASSAL.build.module.gamepieceimage.GamePieceImageDefinitions>
         <VASSAL.build.module.gamepieceimage.ColorManager/>
